@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxfiwuyn524og"]
+
+[ext_resource type="Texture2D" uid="uid://df8btfqb4vmk6" path="res://Assets/mundo.png" id="1_glrae"]
+[ext_resource type="PackedScene" uid="uid://bsq60u2bwpmkt" path="res://arbol.tscn" id="2_ahapt"]
+[ext_resource type="PackedScene" uid="uid://do6m68xmyyy2a" path="res://player.tscn" id="3_7vj4h"]
+
+[node name="Mundo" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(960, 543)
+texture = ExtResource("1_glrae")
+
+[node name="Arbol" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(182, 256)
+
+[node name="Arbol2" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(736, 194)
+
+[node name="Arbol3" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1509, 787)
+
+[node name="Arbol4" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(943, 827)
+
+[node name="Player" parent="." instance=ExtResource("3_7vj4h")]
+position = Vector2(499, 266)
+
+[node name="Arbol5" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(622, 663)
+
+[node name="Arbol6" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(424, 449)
+
+[node name="Arbol7" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1607, 316)
+
+[node name="Arbol8" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(141, 625)
+
+[node name="Arbol9" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1771, 1007)
+
+[node name="Arbol10" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1773, 596)
+
+[node name="Arbol11" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1305, 589)
+
+[node name="Arbol12" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(261, 896)
+
+[node name="Arbol13" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1224, 994)
+
+[node name="Arbol14" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(931, 474)
+
+[node name="Arbol15" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(1257, 202)
+
+[node name="Arbol16" parent="." instance=ExtResource("2_ahapt")]
+position = Vector2(639, 989)
