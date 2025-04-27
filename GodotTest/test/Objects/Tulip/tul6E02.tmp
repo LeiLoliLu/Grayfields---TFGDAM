@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjs2pyfboyv1u"]
+
+[ext_resource type="Script" path="res://Objects/Tulip/tulip.gd" id="1_6b06q"]
+[ext_resource type="SpriteFrames" uid="uid://dudio8tsypaau" path="res://SpriteFrames/tulip_gs.tres" id="2_cje7p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gld1y"]
+radius = 20.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v260s"]
+size = Vector2(48, 104)
+
+[node name="Tulip" type="CharacterBody2D"]
+script = ExtResource("1_6b06q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_cje7p")
+animation = &"Down"
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.015)
+shape = SubResource("CapsuleShape2D_gld1y")
+
+[node name="TulipInteractionZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TulipInteractionZone"]
+position = Vector2(0, -26.015)
+shape = SubResource("RectangleShape2D_v260s")

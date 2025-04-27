@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://exp5oqglsnnr"
+path="res://.godot/imported/tulip.dialogue-d9b97fb9720f81735733c9b3f0b00f38.tres"
+
+[deps]
+
+source_file="res://Dialogue/tulip.dialogue"
+dest_files=["res://.godot/imported/tulip.dialogue-d9b97fb9720f81735733c9b3f0b00f38.tres"]
+
+[params]
+
+defaults=true

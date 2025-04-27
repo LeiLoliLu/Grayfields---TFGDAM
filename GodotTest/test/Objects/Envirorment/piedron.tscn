@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://qtcbeflpwio2"]
+
+[ext_resource type="Texture2D" uid="uid://c7txmdueswate" path="res://Assets/piedron.png" id="1_d5cf5"]
+[ext_resource type="Script" path="res://Objects/Envirorment/piedron.gd" id="1_ecgfk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvbm4"]
+radius = 11.0
+height = 52.0
+
+[node name="Piedron" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_ecgfk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -31)
+texture = ExtResource("1_d5cf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gvbm4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-47, -14)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gvbm4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(29, -7)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gvbm4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(48, -15)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gvbm4")
+
+[node name="PiedronInteractionZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PiedronInteractionZone"]
+polygon = PackedVector2Array(-74, -9, -37, -2, -10, 1, 49, -5, 70, -10, 61, -36, 52, -41, -11, -41, -35, -38, -67, -27, -73, -21)

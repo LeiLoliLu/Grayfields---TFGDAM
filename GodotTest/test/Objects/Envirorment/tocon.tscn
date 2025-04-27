@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtdvngfywe5xq"]
+
+[ext_resource type="Texture2D" uid="uid://bmsp3o3nylgy8" path="res://Assets/tocon.png" id="1_04wle"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gapi"]
+radius = 7.0
+
+[node name="Tocon" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_04wle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8gapi")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://djdylcryf1lv2"]
+
+[ext_resource type="Texture2D" uid="uid://cq7qr4tdqq1g2" path="res://Assets/arbolCaido.png" id="1_4ri8e"]
+[ext_resource type="Script" path="res://Objects/Envirorment/arbol_caido.gd" id="1_u1a83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8rvh"]
+size = Vector2(124, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsqmp"]
+size = Vector2(124, 23)
+
+[node name="ArbolCaido" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_u1a83")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+texture = ExtResource("1_4ri8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_s8rvh")
+
+[node name="fallenTreeInteractionZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallenTreeInteractionZone"]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_gsqmp")
+debug_color = Color(0.521569, 0.498039, 0.760784, 0.419608)

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://do6m68xmyyy2a"]
+
+[ext_resource type="Script" path="res://Objects/Allen/allen.gd" id="1_2biyg"]
+[ext_resource type="SpriteFrames" uid="uid://cf25ey408sn5a" path="res://SpriteFrames/allen_gs.tres" id="2_m84um"]
+[ext_resource type="SpriteFrames" uid="uid://cas717stb2qm0" path="res://SpriteFrames/allen_c.tres" id="3_7itwh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t206s"]
+radius = 9.0
+height = 24.0
+
+[node name="Allen" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_2biyg")
+allen_gs = ExtResource("2_m84um")
+allen_c = ExtResource("3_7itwh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -29)
+sprite_frames = ExtResource("2_m84um")
+animation = &"Down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_t206s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1038
+limit_smoothed = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -26)
+target_position = Vector2(0, 70)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false

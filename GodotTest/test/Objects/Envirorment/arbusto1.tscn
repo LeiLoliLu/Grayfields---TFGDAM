@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmv77ximxitrp"]
+
+[ext_resource type="Texture2D" uid="uid://dycwylekjlpk1" path="res://Assets/arbusto1.png" id="1_6age3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gr3fw"]
+radius = 8.0
+height = 34.0
+
+[node name="Arbusto1" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_6age3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gr3fw")

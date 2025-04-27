@@ -11,15 +11,40 @@ config_version=5
 [application]
 
 config/name="Test"
-run/main_scene="res://player.tscn"
+run/main_scene="res://mundo.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+general/custom_test_scene_path="res://Dialogue/test_dialogue.tscn"
+general/balloon_path="res://Objects/balloon.tscn"
 
 [display]
 
 window/size/viewport_width=864
 window/size/viewport_height=486
+window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogue/tulip.dialogue", "res://Dialogue/area1.dialogue")
+
+[layer_names]
+
+2d_physics/layer_1="Envirorment"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactions"
+2d_physics/layer_4="NPCs"
 
 [rendering]
 

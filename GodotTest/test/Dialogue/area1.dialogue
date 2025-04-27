@@ -1,0 +1,100 @@
+~ piedron
+do show_portrait("allen1")
+Allen: (Esta piedra sirve para todo. Es una mesa, un parque de escalada, una cama incómoda…)
+
+do show_portrait("tulip3")
+Tulip: El otro día Tino se dió con la bici contra ella y salió volando.
+
+do show_portrait("allen11")
+Allen: (...)
+
+do show_portrait("allen9")
+Allen: …Dulce Karma.
+
+do show_portrait("tulip4")
+Tulip: No seas malo.
+
+=> END!
+
+~ arbolCaido
+do show_portrait("allen1")
+Allen: (Recuerdo cuando este árbol seguía en pie. Se sentía más grande cuando era niño.)
+
+do show_portrait("tulip3")
+Tulip: ¿Crees que el viento lo tumbó o lo cortaron?
+
+do show_portrait("allen10")
+Allen: No sé.
+
+do show_portrait("tulip1")
+Tulip: Tal vez fue un rayo.
+
+do show_portrait("allen7")
+Allen: …O extraterrestres.
+
+do show_portrait("tulip6")
+Tulip: ¡Ves! Por eso tienes que salir más. Tienes buenas teorías.
+
+=> END!
+
+~ puertaCasaAllen
+do show_portrait("allen2")
+Allen: (...)
+
+do show_portrait("tulip7")
+Tulip: ¿Allen?
+
+do show_portrait("allen10")
+Allen: Voy, voy.
+
+do show_portrait("tulip6")
+Tulip: Ah, ya me parecía.
+=> END!
+
+~ arbolito
+
+do show_portrait("allen3")
+Allen: (Tulip y yo plantamos este árbol de pequeños. La idea era que así podríamos hacernos una casa del árbol, pero subestimamos lo lento que crecería.)
+
+do show_portrait("tulip1")
+Tulip: El otro día podé un poco a Roberto.
+
+do show_portrait("allen2")
+Allen: …¿Roberto?
+
+do show_portrait("tulip3")
+Tulip: Nuestro arbolito, se llama Roberto. Roberto Encinas.
+
+do show_portrait("allen7")
+Allen: (¿Juraría que la última vez se llamaba David Robles…?)
+
+=> END!
+
+~ tulip
+do show_portrait("allen1")
+Allen: ¿Qué hay que comprar?
+
+do show_portrait("tulip9")
+Tulip: Uiss… Se me ha olvidado.
+
+do show_portrait("allen6")
+Allen: ...
+
+do show_portrait("allen4")
+Allen: …Tienes que estar bromeando.
+
+do show_portrait("tulip1")
+Tulip: ¡Como mínimo, jabón! Y si no gruñes podemos comprar galletas.
+
+=> END!
+
+~ lago
+do show_portrait("allen1")
+Allen: (Hace tiempo que no voy al lago.)
+do show_portrait("tulip1")
+Tulip: Allen, ¿A dónde vas? No pensarás escaparte.
+do show_portrait("allen4")
+Allen: …Si quisiera escaparme me volvería dentro de casa.
+do show_portrait("tulip2")
+Tulip: ¡Ni se te ocurra, jovencito!
+=> END!

@@ -1,0 +1,9 @@
+~ tulip_hi
+do show_portrait("tulip6")
+Tulip: ¡Vamonos!
+=> END!
+
+~ tulip_bye
+do show_portrait("tulip1")
+Tulip: ¡Nos vemos!
+=> END!

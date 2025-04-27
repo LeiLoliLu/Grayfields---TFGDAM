@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnuf6d5p3evvm"]
+
+[ext_resource type="Script" path="res://Objects/Envirorment/edificio_casa_allen.gd" id="1_i02of"]
+[ext_resource type="Texture2D" uid="uid://dvvnnwcmlu4ov" path="res://Assets/casaAllen.png" id="1_uxfag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjf1l"]
+size = Vector2(153, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bxke"]
+size = Vector2(148, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulak7"]
+size = Vector2(35, 60)
+
+[node name="EdificioCasaAllen" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_i02of")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -120)
+texture = ExtResource("1_uxfag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-65.5, -50)
+shape = SubResource("RectangleShape2D_cjf1l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(85, -64.5)
+shape = SubResource("RectangleShape2D_5bxke")
+
+[node name="puerta" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta"]
+position = Vector2(-65.5, -29)
+shape = SubResource("RectangleShape2D_ulak7")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
