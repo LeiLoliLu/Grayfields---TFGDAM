@@ -4,7 +4,7 @@ extends StaticBody2D
 var dialogue_manager = DialogueManager
 
 # Este método muestra el diálogo
-func showInteraction():
+func showInteraction(player):
 	var interaction = dialogue_manager.show_dialogue_balloon(load("res://Dialogue/area1.dialogue"), "lago")
 	interaction.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true  # Pausamos el juego hasta que termine el diálogo
@@ -20,4 +20,4 @@ func _unpause(resource):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Allen":
-		showInteraction()
+		showInteraction(body)

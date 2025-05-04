@@ -87,7 +87,6 @@ var dialogue_line: DialogueLine:
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 func show_portrait(nombre_archivo: String) -> void:
-	print(nombre_archivo)
 	var path = "res://Assets/Portraits/%s.png" % nombre_archivo
 	portrait.texture = load(path)
 

@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	pass
 	
 	
-func showInteraction():
+func showInteraction(player):
 	var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/area1.dialogue"), "puertaCasaAllen")
 	interaction.process_mode=Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true

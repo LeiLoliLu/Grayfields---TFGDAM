@@ -7,6 +7,10 @@ var is_color = false
 const speed = 90.0
 var last_direction = "Down"
 
+var misiones: Array[String] = ["Hacer la compra"]
+var diario: Array[String] = ["Allen", "Grayfields", "Mi cuarto", "El baño", "El lazo perdido"]
+var inventario: Array[String] = ["Queso","Caja de galletas normales","Nuggets de pollo congelados","Mr Coconut"]
+
 var path_history: Array[Vector2] = []
 const history_spacing = 5.0
 const max_history_length = 200
@@ -27,7 +31,7 @@ func _input(event):
 				obj.interactuar()  # ← SOLO hablas, no alteras el seguimiento
 			else:
 				if obj.has_method("showInteraction"):
-					obj.showInteraction()
+					obj.showInteraction(self)
 
 
 func _process(delta):
@@ -70,3 +74,15 @@ func _process(delta):
 			path_history.push_front(global_position)
 			if path_history.size() > max_history_length:
 				path_history.pop_back()
+
+func agregar_mision(nombre: String):
+	if not misiones.has(nombre):
+		misiones.append(nombre)
+
+func agregar_al_inventario(item: String):
+	if not inventario.has(item):
+		inventario.append(item)
+
+func agregar_al_diario(entrada: String):
+	if not diario.has(entrada):
+		diario.append(entrada)

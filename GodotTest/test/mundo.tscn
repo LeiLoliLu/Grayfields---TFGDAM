@@ -118,4 +118,6 @@ shape = SubResource("RectangleShape2D_gxob6")
 stream = ExtResource("14_ht7pu")
 autoplay = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="body_entered" from="LagoBound/Area2D" to="LagoBound" method="_on_area_2d_body_entered"]
