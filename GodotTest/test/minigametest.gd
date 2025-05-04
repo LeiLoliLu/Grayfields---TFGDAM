@@ -31,8 +31,8 @@ func _process(_delta):
 			
 			# Verificar si estamos dentro del margen
 			if diff <= margin:
-				label.text = "¡Perfecto!"
 				counter += 1
+				label.text = "¡Perfecto! Aciertos: "+str(counter)
 				print("Acierto número: " + str(counter))
 				
 				# Eliminar el beat del array después de acertarlo
