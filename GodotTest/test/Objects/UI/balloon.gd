@@ -1,10 +1,8 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
-## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
 @onready var portrait: TextureRect = $Balloon/Panel/Dialogue/HBoxContainer/Portrait
-## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
 
 ## The dialogue resource

@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var menu = preload("res://menu.tscn").instantiate()
-@onready var notificador = preload("res://notification.tscn").instantiate();
+@onready var menu = preload("res://Objects/UI/menu.tscn").instantiate()
+@onready var notificador = preload("res://Objects/UI/notification.tscn").instantiate();
 @onready var player = $Allen
 var menu_open = false
 
