@@ -8,11 +8,12 @@ var margin = 200
 var counter = 0
 var target_beats_ms = []
 var max_beat = 48
+var delay = 250
 
 func _ready():
 	for i in range(1, max_beat + 1): 
 		if i % 4 == 0:
-			target_beats_ms.append(i * beat_time_ms - 750)
+			target_beats_ms.append(i * beat_time_ms - 750 + delay)
 	music.play()
 
 func _process(_delta):
