@@ -23,7 +23,6 @@ func showInteraction(player):
 	DialogueManager.dialogue_ended.connect(_unpause)
 	
 	
-	
 func _unpause(resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
