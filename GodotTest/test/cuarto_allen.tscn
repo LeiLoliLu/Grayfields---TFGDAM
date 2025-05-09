@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2ur6p5cn43bf"]
+
+[ext_resource type="Texture2D" uid="uid://bqymmwv54o7m2" path="res://Assets/CuartoAllen/fondo.png" id="1_7a104"]
+[ext_resource type="Script" path="res://cuarto_allen.gd" id="1_56uey"]
+[ext_resource type="Texture2D" uid="uid://86yu55c1x768" path="res://Assets/CuartoAllen/cama.png" id="2_y47i4"]
+[ext_resource type="Texture2D" uid="uid://l8i5lhfxu8gn" path="res://Assets/CuartoAllen/mantaOverlay.png" id="3_nrmn2"]
+[ext_resource type="PackedScene" uid="uid://do6m68xmyyy2a" path="res://Objects/Allen/allen.tscn" id="4_chqdb"]
+[ext_resource type="Texture2D" uid="uid://hp51a2tspuy2" path="res://Assets/CuartoAllen/sillarota.png" id="6_4o152"]
+[ext_resource type="Texture2D" uid="uid://bkvowifao0r36" path="res://Assets/CuartoAllen/mesa.png" id="7_mx0sq"]
+[ext_resource type="Texture2D" uid="uid://bh4iv3xjq7s1o" path="res://Assets/CuartoAllen/estanteria.png" id="8_s554h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tug5"]
+size = Vector2(47, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rknc4"]
+size = Vector2(61, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr1sy"]
+size = Vector2(72, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnstb"]
+size = Vector2(64, 22)
+
+[node name="CuartoAllen" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_56uey")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(288, 162)
+texture = ExtResource("1_7a104")
+
+[node name="Cama" type="StaticBody2D" parent="."]
+position = Vector2(86, 33)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Cama"]
+position = Vector2(112, 138)
+texture = ExtResource("2_y47i4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cama"]
+z_index = 2
+position = Vector2(112, 146)
+texture = ExtResource("3_nrmn2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cama"]
+position = Vector2(110.5, 166)
+shape = SubResource("RectangleShape2D_0tug5")
+
+[node name="Allen" parent="." instance=ExtResource("4_chqdb")]
+position = Vector2(198, 184)
+collision_mask = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Silla" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Silla"]
+position = Vector2(207, 243)
+texture = ExtResource("6_4o152")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Silla"]
+position = Vector2(198.5, 238)
+shape = SubResource("RectangleShape2D_rknc4")
+
+[node name="Mesa" type="StaticBody2D" parent="."]
+position = Vector2(81, -97)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Mesa"]
+position = Vector2(207, 243)
+texture = ExtResource("7_mx0sq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa"]
+position = Vector2(207, 238)
+shape = SubResource("RectangleShape2D_gr1sy")
+
+[node name="Estanteria" type="StaticBody2D" parent="."]
+position = Vector2(81, -92)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Estanteria"]
+position = Vector2(277, 220)
+texture = ExtResource("8_s554h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estanteria"]
+position = Vector2(277, 233)
+shape = SubResource("RectangleShape2D_rnstb")
