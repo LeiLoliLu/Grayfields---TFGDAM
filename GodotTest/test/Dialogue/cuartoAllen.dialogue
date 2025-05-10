@@ -1,0 +1,6 @@
+~ wakeUp
+do show_portrait("AllenWake1")
+Allen: (...)
+do show_portrait("AllenWake2")
+Allen: (Ya es de día...)
+=> END!

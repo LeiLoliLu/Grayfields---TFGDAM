@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2ur6p5cn43bf"]
+[gd_scene load_steps=23 format=3 uid="uid://d2ur6p5cn43bf"]
 
 [ext_resource type="Texture2D" uid="uid://bqymmwv54o7m2" path="res://Assets/CuartoAllen/fondo.png" id="1_7a104"]
 [ext_resource type="Script" path="res://cuarto_allen.gd" id="1_56uey"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://hp51a2tspuy2" path="res://Assets/CuartoAllen/sillarota.png" id="6_4o152"]
 [ext_resource type="Texture2D" uid="uid://bkvowifao0r36" path="res://Assets/CuartoAllen/mesa.png" id="7_mx0sq"]
 [ext_resource type="Texture2D" uid="uid://bh4iv3xjq7s1o" path="res://Assets/CuartoAllen/estanteria.png" id="8_s554h"]
+[ext_resource type="Texture2D" uid="uid://djh6avhrxqoia" path="res://Assets/CuartoAllen/armario.png" id="9_bghjb"]
+[ext_resource type="Texture2D" uid="uid://cyrmnpbrb5vue" path="res://Assets/CuartoAllen/OverlayFondo.png" id="10_x2i8a"]
+[ext_resource type="Texture2D" uid="uid://cpyijluo3jowd" path="res://Assets/CuartoAllen/shadowOverlay.png" id="11_t6xbj"]
+[ext_resource type="AudioStream" uid="uid://nn5im57nilc0" path="res://Assets/Audio/Home.mp3" id="12_5ha44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tug5"]
 size = Vector2(47, 20)
@@ -20,6 +24,24 @@ size = Vector2(72, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnstb"]
 size = Vector2(64, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8avn4"]
+size = Vector2(83, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sj2n"]
+size = Vector2(223.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c33pe"]
+size = Vector2(23, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oeaw"]
+size = Vector2(253, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1kol"]
+size = Vector2(55, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3fbn"]
+size = Vector2(55, 20)
 
 [node name="CuartoAllen" type="Node2D"]
 y_sort_enabled = true
@@ -48,7 +70,7 @@ position = Vector2(110.5, 166)
 shape = SubResource("RectangleShape2D_0tug5")
 
 [node name="Allen" parent="." instance=ExtResource("4_chqdb")]
-position = Vector2(198, 184)
+position = Vector2(189, 184)
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -89,3 +111,57 @@ texture = ExtResource("8_s554h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Estanteria"]
 position = Vector2(277, 233)
 shape = SubResource("RectangleShape2D_rnstb")
+
+[node name="Armario" type="StaticBody2D" parent="."]
+z_index = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Armario"]
+position = Vector2(349.5, 268.5)
+shape = SubResource("RectangleShape2D_8avn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Armario"]
+position = Vector2(349, 251.25)
+scale = Vector2(1, 1.01613)
+texture = ExtResource("9_bghjb")
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(279.25, 138)
+shape = SubResource("RectangleShape2D_3sj2n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(159.5, 170.5)
+shape = SubResource("RectangleShape2D_c33pe")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(274.5, 289)
+shape = SubResource("RectangleShape2D_6oeaw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(417.5, 238.5)
+shape = SubResource("RectangleShape2D_t1kol")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(417.5, 160)
+shape = SubResource("RectangleShape2D_w3fbn")
+
+[node name="OverlayPared" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(359.5, 266)
+scale = Vector2(1, 0.986957)
+texture = ExtResource("10_x2i8a")
+
+[node name="OverlaySombra" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(279, 165)
+scale = Vector2(0.929461, 0.89083)
+texture = ExtResource("11_t6xbj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_5ha44")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

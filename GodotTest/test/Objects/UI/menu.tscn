@@ -28,12 +28,11 @@ anchor_bottom = 0.98
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vgqan")
-current_tab = 2
+current_tab = 0
 clip_tabs = false
 tab_focus_mode = 1
 
 [node name="Allen" type="HBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
@@ -146,6 +145,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Diario" type="HBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

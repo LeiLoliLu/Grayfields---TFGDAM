@@ -1,11 +1,23 @@
 extends Node2D
 
+@onready var menu = preload("res://Objects/UI/menu.tscn").instantiate()
+@onready var notificador = preload("res://Objects/UI/notification.tscn").instantiate();
+@onready var player = $Allen
+var menu_open = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready():
 	$Allen/Camera2D.enabled=false;
+	$AudioStreamPlayer.process_mode=Node.PROCESS_MODE_ALWAYS
+	menu.visible = false
+	$CanvasLayer.add_child(menu)
+	$CanvasLayer.add_child(notificador)
+	$Allen.wakeUp()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	if Input.is_action_just_pressed("ui_tab"):
+		menu_open = !menu_open
+		menu.visible = menu_open
+		menu.actualizar_misiones(player)
+		menu.actualizar_inventario(player)
+		menu.actualizar_diario(player)
+		get_tree().paused = menu_open

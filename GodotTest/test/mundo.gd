@@ -6,7 +6,6 @@ extends Node2D
 var menu_open = false
 
 func _ready():
-	# Asegúrate de que el menú está visible inicialmente en false.
 	$AudioStreamPlayer.process_mode=Node.PROCESS_MODE_ALWAYS
 	menu.visible = false
 	$CanvasLayer.add_child(menu)

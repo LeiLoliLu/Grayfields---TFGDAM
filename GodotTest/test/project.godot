@@ -45,7 +45,7 @@ ui_tab={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/tulip.dialogue", "res://Dialogue/area1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/tulip.dialogue", "res://Dialogue/area1.dialogue", "res://Dialogue/cuartoAllen.dialogue")
 
 [layer_names]
 

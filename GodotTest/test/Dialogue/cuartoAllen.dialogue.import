@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://df1ka2h5fju21"
+path="res://.godot/imported/cuartoAllen.dialogue-60754f38653c568f91ab93ccf7d5746e.tres"
+
+[deps]
+
+source_file="res://Dialogue/cuartoAllen.dialogue"
+dest_files=["res://.godot/imported/cuartoAllen.dialogue-60754f38653c568f91ab93ccf7d5746e.tres"]
+
+[params]
+
+defaults=true
