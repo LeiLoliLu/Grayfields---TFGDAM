@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://d2ur6p5cn43bf"]
+[gd_scene load_steps=25 format=3 uid="uid://d2ur6p5cn43bf"]
 
 [ext_resource type="Texture2D" uid="uid://bqymmwv54o7m2" path="res://Assets/CuartoAllen/fondo.png" id="1_7a104"]
 [ext_resource type="Script" path="res://cuarto_allen.gd" id="1_56uey"]
 [ext_resource type="Texture2D" uid="uid://86yu55c1x768" path="res://Assets/CuartoAllen/cama.png" id="2_y47i4"]
 [ext_resource type="Texture2D" uid="uid://l8i5lhfxu8gn" path="res://Assets/CuartoAllen/mantaOverlay.png" id="3_nrmn2"]
+[ext_resource type="Script" path="res://cama.gd" id="3_rtfip"]
 [ext_resource type="PackedScene" uid="uid://do6m68xmyyy2a" path="res://Objects/Allen/allen.tscn" id="4_chqdb"]
 [ext_resource type="Texture2D" uid="uid://hp51a2tspuy2" path="res://Assets/CuartoAllen/sillarota.png" id="6_4o152"]
 [ext_resource type="Texture2D" uid="uid://bkvowifao0r36" path="res://Assets/CuartoAllen/mesa.png" id="7_mx0sq"]
@@ -15,6 +16,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tug5"]
 size = Vector2(47, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuv6w"]
+size = Vector2(50, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rknc4"]
 size = Vector2(61, 58)
@@ -55,19 +59,29 @@ texture = ExtResource("1_7a104")
 [node name="Cama" type="StaticBody2D" parent="."]
 position = Vector2(86, 33)
 collision_mask = 0
+script = ExtResource("3_rtfip")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cama"]
 position = Vector2(112, 138)
 texture = ExtResource("2_y47i4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Cama"]
-z_index = 2
+z_index = 1
 position = Vector2(112, 146)
 texture = ExtResource("3_nrmn2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cama"]
 position = Vector2(110.5, 166)
 shape = SubResource("RectangleShape2D_0tug5")
+
+[node name="Area2D" type="Area2D" parent="Cama"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cama/Area2D"]
+position = Vector2(111, 135)
+shape = SubResource("RectangleShape2D_iuv6w")
+debug_color = Color(0.69512, 0.378911, 0.815239, 0.42)
 
 [node name="Allen" parent="." instance=ExtResource("4_chqdb")]
 position = Vector2(189, 184)
@@ -156,6 +170,7 @@ texture = ExtResource("10_x2i8a")
 
 [node name="OverlaySombra" type="Sprite2D" parent="."]
 top_level = true
+z_index = 1
 position = Vector2(279, 165)
 scale = Vector2(0.929461, 0.89083)
 texture = ExtResource("11_t6xbj")

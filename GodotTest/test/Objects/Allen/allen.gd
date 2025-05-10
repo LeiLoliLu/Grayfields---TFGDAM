@@ -30,7 +30,7 @@ func _input(event):
 		if $RayCast2D.is_colliding():
 			var obj = $RayCast2D.get_collider().get_parent()
 			if obj is CharacterBody2D and obj.name == "Tulip":
-				obj.interactuar()  # ← SOLO hablas, no alteras el seguimiento
+				obj.interactuar()
 			else:
 				if obj.has_method("showInteraction"):
 					obj.showInteraction(self)

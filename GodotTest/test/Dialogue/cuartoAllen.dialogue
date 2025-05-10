@@ -4,3 +4,8 @@ Allen: (...)
 do show_portrait("AllenWake2")
 Allen: (Ya es de día...)
 => END!
+
+~ cama
+do show_portrait("AllenWake1")
+Allen: (He dormido suficiente.)
+=> END!
