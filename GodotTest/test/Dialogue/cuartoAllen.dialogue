@@ -6,6 +6,31 @@ Allen: (Ya es de día...)
 => END!
 
 ~ cama
-do show_portrait("AllenWake1")
+do show_portrait("allen10")
 Allen: (He dormido suficiente.)
+=> END!
+
+~ estanteria
+do show_portrait("allen10")
+Allen: (Ya me lo he leído todo.)
+=> END!
+
+~ mesa
+do show_portrait("allen1")
+Allen: (Notas de cosas sin importancia. Algunas son de Tulip.)
+=> END!
+
+~ silla
+do show_portrait("allen7")
+Allen: (Podría arreglarla… Algún día.)
+=> END!
+
+~ puerta
+do show_portrait("allen10")
+Allen: (...No, preferiría que no.)
+=> END!
+
+~ armario
+do show_portrait("allen1")
+Allen: (La ropa de siempre.)
 => END!

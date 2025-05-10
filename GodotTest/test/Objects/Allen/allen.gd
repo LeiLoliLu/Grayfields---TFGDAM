@@ -22,7 +22,8 @@ func _ready():
 	$AnimatedSprite2D.sprite_frames = allen_gs
 	$AnimatedSprite2D.play("Down")
 	$AnimatedSprite2D.stop()
-	seguimiento_activo = false  
+	seguimiento_activo = false 
+	$CanvasLayer.visible = false
 
 
 func _input(event):
@@ -38,6 +39,13 @@ func _input(event):
 
 func _process(delta):
 	if can_move:
+		if $RayCast2D.is_colliding():
+			var obj = $RayCast2D.get_collider().get_parent()
+			if obj is CharacterBody2D and obj.name == "Tulip" or obj.has_method("showInteraction"):
+				$CanvasLayer.visible = true
+		else:
+			$CanvasLayer.visible = false
+		
 		var input_vector = Vector2.ZERO
 
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
