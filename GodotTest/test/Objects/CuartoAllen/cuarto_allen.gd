@@ -1,23 +1,94 @@
 extends Node2D
 
 @onready var menu = preload("res://Objects/UI/menu.tscn").instantiate()
-@onready var notificador = preload("res://Objects/UI/notification.tscn").instantiate();
-@onready var player = $Allen
 var menu_open = false
+var interaction_countdown = 6
+var tulip_event_executed = false
+
+func add_allen_to_scene():
+	add_child(Allen)
 
 func _ready():
-	$Allen/Camera2D.enabled=false;
-	$AudioStreamPlayer.process_mode=Node.PROCESS_MODE_ALWAYS
+	if Allen.get_parent() != self:
+		Allen.get_parent().call_deferred("remove_child", Allen)
+	call_deferred("add_allen_to_scene")
+	Allen.global_position = Vector2(189, 185)
+	
+	$SoundEffectsPlayer.process_mode=Node.PROCESS_MODE_ALWAYS
+	$Tulip.siguiendo=false
+	$Tulip.visible=false
+	$Tulip/TulipInteractionZone/CollisionShape2D.disabled=true
+	
+	Allen.get_node("Camera2D").enabled=false
+	
 	menu.visible = false
 	$CanvasLayer.add_child(menu)
-	$CanvasLayer.add_child(notificador)
-	$Allen.wakeUp()
+	Allen.wakeUp()
+	Allen.raycastSize = 45
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_tab"):
 		menu_open = !menu_open
 		menu.visible = menu_open
-		menu.actualizar_misiones(player)
-		menu.actualizar_inventario(player)
-		menu.actualizar_diario(player)
+		menu.actualizar_misiones(Allen)
+		menu.actualizar_inventario(Allen)
+		menu.actualizar_diario(Allen)
 		get_tree().paused = menu_open
+	if !tulip_event_executed and interaction_countdown<=0:
+		tulip_event()
+
+func tulip_event():
+	Allen.get_node("CanvasLayer").visible=false
+	Allen.can_move = false
+	tulip_event_executed = true 
+	var parte1 = DialogueManager.show_dialogue_balloon(load("res://Dialogue/cuartoAllen.dialogue"), "tulip_event1")
+	parte1.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
+	DialogueManager.dialogue_ended.connect(_on_tulip_parte1_end)
+
+func _on_tulip_parte1_end(_resource):
+	DialogueManager.dialogue_ended.disconnect(_on_tulip_parte1_end)
+	get_tree().paused = false
+	
+	Allen.can_move = false
+	Allen.get_node("AnimatedSprite2D").play("Right")
+	await Allen.mover_a_posicion_objetivo(Vector2(292, 204), 5.0)
+	Allen.get_node("AnimatedSprite2D").stop()
+	
+	$SoundEffectsPlayer.stream= load("res://Assets/Audio/OpenDoor.mp3")
+	$SoundEffectsPlayer.volume_db=-20
+	$SoundEffectsPlayer.play()
+	$Tulip/AnimatedSprite2D.play("Left")
+	$Tulip/AnimatedSprite2D.stop()
+	$Tulip.visible=true
+	
+	var parte2 = DialogueManager.show_dialogue_balloon(load("res://Dialogue/cuartoAllen.dialogue"), "tulip_event2")
+	parte2.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
+	DialogueManager.dialogue_ended.connect(_on_tulip_parte2_end)
+
+func _on_tulip_parte2_end(_resource):
+	DialogueManager.dialogue_ended.disconnect(_on_tulip_parte2_end)
+	await get_tree().create_timer(0.5).timeout
+	$Tulip/AnimatedSprite2D.play("Right")
+	$Tulip/AnimatedSprite2D.stop()
+	await get_tree().create_timer(0.5).timeout
+	$Tulip.visible=false
+	$SoundEffectsPlayer.stream= load("res://Assets/Audio/CloseDoor.mp3")
+	$SoundEffectsPlayer.volume_db=-20
+	$SoundEffectsPlayer.play()
+	
+	get_tree().paused = false
+	Allen.agregar_mision("Encontrar el lazo")
+	Allen.can_move = true
+
+func exit():
+	$SoundEffectsPlayer.stream= load("res://Assets/Audio/OpenDoor.mp3")
+	var current_scene = get_tree().current_scene
+	Allen.owner = null
+	get_tree().root.add_child(Allen)
+	current_scene.queue_free()
+	var pasillo_scene = load("res://pasillo.tscn")
+	var new_scene = pasillo_scene.instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene = new_scene

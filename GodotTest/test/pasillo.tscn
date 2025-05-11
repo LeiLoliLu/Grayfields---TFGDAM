@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ghisohd8kn6"]
+
+[ext_resource type="Script" path="res://pasillo.gd" id="1_g68nd"]
+
+[node name="Pasillo" type="Node2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_g68nd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 163)
+zoom = Vector2(1.5, 1.5)

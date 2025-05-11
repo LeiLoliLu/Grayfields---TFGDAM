@@ -34,3 +34,45 @@ Allen: (...No, preferiría que no.)
 do show_portrait("allen1")
 Allen: (La ropa de siempre.)
 => END!
+
+~ tulip_event1
+do show_portrait("tulip3")
+Tulip: Alleeeeen. ¿Estás despierto?
+do show_portrait("allen11")
+Allen: … (Si no respondo quizás me ignore.)
+=> END!
+
+~ tulip_event2
+do show_portrait("tulip3")
+Tulip: ¿Hermanito?
+do show_portrait("allen12")
+Allen: (Mierda.)
+do show_portrait("allen10")
+Allen: …Buenos Días
+do show_portrait("tulip6")
+Tulip: ¡Buenos Días!
+do show_portrait("allen1")
+Allen: (Tulip, mi hermana pequeña. Energética desde primera hora de la mañana.)
+do show_portrait("tulip1")
+Tulip: ¿Bajas?  Hace un día buenísimo.
+do show_portrait("allen10")
+Allen: …No me apetece demasiado.
+do show_portrait("tulip7")
+Tulip: Porfaaa. Además, necesito ayuda con algo.
+do show_portrait("allen4")
+Allen: (No es como si me dejaras espacio a elegir con esos ojos de cachorro…)
+do show_portrait("allen1")
+Allen: …¿Con qué?
+do show_portrait("tulip4")
+Tulip: He perdido uno de mis lazos. Lo tenía hace un rato en la cocina y ahora no lo encuentro.
+do show_portrait("allen2")
+Allen: …Tienes más lazos.
+do show_portrait("tulip7")
+Tulip: Vamos, no tardará nada. Es mi favorito. Poooorfiiiiii.
+do show_portrait("allen7")
+Allen: (Tampoco es como que tenga nada mejor que hacer.)
+do show_portrait("allen10")
+Allen: Vale, vamos.
+do show_portrait("tulip6")
+Tulip: Eres el mejor. Te espero abajo entonces.
+=> END!

@@ -6,11 +6,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 	
-func showInteraction(player):
+func showInteraction(_player):
 	var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/cuartoAllen.dialogue"), "estanteria")
 	interaction.process_mode=Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
@@ -18,7 +18,8 @@ func showInteraction(player):
 	DialogueManager.dialogue_ended.connect(_unpause)
 	
 	
-func _unpause(resource):
+func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
+	self.get_parent().interaction_countdown-=1
 	

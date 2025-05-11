@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bja3veve83f1u"]
+
+[node name="MasterAudio" type="AudioStreamPlayer"]
+process_mode = 3

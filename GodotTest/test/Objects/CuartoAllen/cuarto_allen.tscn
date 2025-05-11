@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://d2ur6p5cn43bf"]
+[gd_scene load_steps=35 format=3 uid="uid://d2ur6p5cn43bf"]
 
 [ext_resource type="Texture2D" uid="uid://bqymmwv54o7m2" path="res://Assets/CuartoAllen/fondo.png" id="1_7a104"]
 [ext_resource type="Script" path="res://Objects/CuartoAllen/cuarto_allen.gd" id="1_56uey"]
 [ext_resource type="Texture2D" uid="uid://86yu55c1x768" path="res://Assets/CuartoAllen/cama.png" id="2_y47i4"]
 [ext_resource type="Texture2D" uid="uid://l8i5lhfxu8gn" path="res://Assets/CuartoAllen/mantaOverlay.png" id="3_nrmn2"]
 [ext_resource type="Script" path="res://Objects/CuartoAllen/cama.gd" id="3_rtfip"]
-[ext_resource type="PackedScene" uid="uid://do6m68xmyyy2a" path="res://Objects/Allen/allen.tscn" id="4_chqdb"]
 [ext_resource type="Texture2D" uid="uid://hp51a2tspuy2" path="res://Assets/CuartoAllen/sillarota.png" id="6_4o152"]
 [ext_resource type="Script" path="res://Objects/CuartoAllen/silla.gd" id="7_1wo77"]
 [ext_resource type="Texture2D" uid="uid://bkvowifao0r36" path="res://Assets/CuartoAllen/mesa.png" id="7_mx0sq"]
@@ -15,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cyrmnpbrb5vue" path="res://Assets/CuartoAllen/OverlayFondo.png" id="10_x2i8a"]
 [ext_resource type="Script" path="res://Objects/CuartoAllen/estanteria.gd" id="11_5p1kq"]
 [ext_resource type="Texture2D" uid="uid://cpyijluo3jowd" path="res://Assets/CuartoAllen/shadowOverlay.png" id="11_t6xbj"]
-[ext_resource type="AudioStream" uid="uid://nn5im57nilc0" path="res://Assets/Audio/Home.mp3" id="12_5ha44"]
 [ext_resource type="Script" path="res://Objects/CuartoAllen/armario.gd" id="13_0r8gv"]
+[ext_resource type="Script" path="res://Objects/CuartoAllen/puerta.gd" id="18_c4ck4"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="19_0y0f2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tug5"]
 size = Vector2(47, 20)
@@ -63,6 +63,12 @@ size = Vector2(55, 33)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3fbn"]
 size = Vector2(55, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p75d5"]
+size = Vector2(20, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l5wl"]
+size = Vector2(20, 90)
+
 [node name="CuartoAllen" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_56uey")
@@ -98,10 +104,6 @@ collision_mask = 0
 position = Vector2(111, 135)
 shape = SubResource("RectangleShape2D_iuv6w")
 debug_color = Color(0.69512, 0.378911, 0.815239, 0.42)
-
-[node name="Allen" parent="." instance=ExtResource("4_chqdb")]
-position = Vector2(189, 184)
-collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(288, 162)
@@ -231,8 +233,26 @@ position = Vector2(279, 165)
 scale = Vector2(0.929461, 0.89083)
 texture = ExtResource("11_t6xbj")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_5ha44")
-autoplay = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Puerta" type="StaticBody2D" parent="."]
+script = ExtResource("18_c4ck4")
+
+[node name="SalidaCuarto" type="CollisionShape2D" parent="Puerta"]
+position = Vector2(455, 193)
+shape = SubResource("RectangleShape2D_p75d5")
+
+[node name="Area2D" type="Area2D" parent="Puerta"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta/Area2D"]
+position = Vector2(455, 164)
+shape = SubResource("RectangleShape2D_1l5wl")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="Tulip" parent="." instance=ExtResource("19_0y0f2")]
+position = Vector2(432, 202)
+
+[node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

@@ -11,11 +11,14 @@ func _process(_delta: float) -> void:
 	
 	
 func showInteraction(_player):
-	var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/cuartoAllen.dialogue"), "cama")
-	interaction.process_mode=Node.PROCESS_MODE_ALWAYS
-	get_tree().paused = true
+	if self.get_parent().tulip_event_executed:
+		get_parent().exit()
+	else:
+		var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/cuartoAllen.dialogue"), "puerta")
+		interaction.process_mode=Node.PROCESS_MODE_ALWAYS
+		get_tree().paused = true
 		
-	DialogueManager.dialogue_ended.connect(_unpause)
+		DialogueManager.dialogue_ended.connect(_unpause)
 	
 	
 func _unpause(_resource):

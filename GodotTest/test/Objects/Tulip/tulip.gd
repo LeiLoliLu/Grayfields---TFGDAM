@@ -8,7 +8,7 @@ var min_distance = 2.0
 
 func _ready() -> void:
 	DialogueManager.process_mode = Node.PROCESS_MODE_ALWAYS
-	player = get_parent().get_node("Allen")  # Ajusta path si necesitas
+	player = Allen
 	if player:
 		siguiendo = true
 		player.seguimiento_activo = true
@@ -21,7 +21,7 @@ func interactuar():
 	get_tree().paused = true
 	DialogueManager.dialogue_ended.connect(_unpause)
 
-func _process(delta):
+func _process(_delta):
 	if siguiendo and player:
 		var path = player.path_history
 		if path.size() > index_offset:
@@ -50,6 +50,6 @@ func _process(delta):
 		velocity = Vector2.ZERO
 		$AnimatedSprite2D.stop()
 
-func _unpause(resource):
+func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)

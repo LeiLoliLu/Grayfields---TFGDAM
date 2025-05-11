@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Allen="*res://Objects/Allen/allen.tscn"
+Notificador="*res://Objects/UI/notification.tscn"
+MasterAudio="*res://Objects/UI/MasterAudio.tscn"
 
 [dialogue_manager]
 
