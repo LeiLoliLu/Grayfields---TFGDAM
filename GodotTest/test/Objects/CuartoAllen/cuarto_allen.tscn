@@ -49,7 +49,7 @@ size = Vector2(83, 25)
 size = Vector2(82, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sj2n"]
-size = Vector2(223.5, 20)
+size = Vector2(223.5, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c33pe"]
 size = Vector2(23, 217)
@@ -201,7 +201,7 @@ debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(279.25, 138)
+position = Vector2(279.25, 135.5)
 shape = SubResource("RectangleShape2D_3sj2n")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
@@ -217,7 +217,7 @@ position = Vector2(417.5, 238.5)
 shape = SubResource("RectangleShape2D_t1kol")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(417.5, 160)
+position = Vector2(418, 163)
 shape = SubResource("RectangleShape2D_w3fbn")
 
 [node name="OverlayPared" type="Sprite2D" parent="."]

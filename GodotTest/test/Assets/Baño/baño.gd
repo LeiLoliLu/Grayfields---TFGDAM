@@ -12,6 +12,7 @@ func _ready():
 	Allen.global_position = Vector2(176, 200)
 	Allen.get_node("Camera2D").enabled=false
 	Allen.raycastSize = 45
+	Allen.can_move=true
 	
 	menu.visible = false
 	$CanvasLayer.add_child(menu)
@@ -26,10 +27,6 @@ func _process(_delta):
 		menu.actualizar_inventario(Allen)
 		menu.actualizar_diario(Allen)
 		get_tree().paused = menu_open
-		
-		
-		
-		
-		
+
 func add_allen_to_scene():
 	add_child(Allen)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c14dbnn0pludd"
+path="res://.godot/imported/pasillo1.dialogue-e4a67d1a803148c300ac4b62891cbead.tres"
+
+[deps]
+
+source_file="res://Dialogue/pasillo1.dialogue"
+dest_files=["res://.godot/imported/pasillo1.dialogue-e4a67d1a803148c300ac4b62891cbead.tres"]
+
+[params]
+
+defaults=true

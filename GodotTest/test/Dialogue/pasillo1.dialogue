@@ -1,0 +1,9 @@
+~ cuartoAllen
+do show_portrait("allen10")
+Allen: (Si, ¿Y esperar a que Tulip vuelva a por mi? No, gracias.)
+=> END!
+
+~ cuartoTulip
+do show_portrait("allen1")
+Allen: (El cuarto de Tulip. Prefiero no entrar.) 
+=> END!

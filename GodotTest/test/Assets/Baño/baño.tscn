@@ -1,0 +1,154 @@
+[gd_scene load_steps=18 format=3 uid="uid://dou7sr4xy7he6"]
+
+[ext_resource type="Script" path="res://Assets/Baño/baño.gd" id="1_nnuun"]
+[ext_resource type="Texture2D" uid="uid://bobwsh5c4cqs6" path="res://Assets/Baño/fondoBaño.png" id="2_xyjp8"]
+[ext_resource type="Texture2D" uid="uid://cd6jhoud01dnc" path="res://Assets/Baño/overlayBaño.png" id="3_npn4r"]
+[ext_resource type="Texture2D" uid="uid://4hk0ohtkehju" path="res://Assets/Baño/ducha.png" id="4_iclci"]
+[ext_resource type="Texture2D" uid="uid://dwbjie50cdujm" path="res://Assets/Baño/inodoro.png" id="5_euiwe"]
+[ext_resource type="Texture2D" uid="uid://irhprae7u5k7" path="res://Assets/Baño/armarioBaño.png" id="6_p7cmo"]
+[ext_resource type="Texture2D" uid="uid://c6xtnb83352hn" path="res://Assets/Baño/toallas.png" id="7_tmvfr"]
+[ext_resource type="Texture2D" uid="uid://5dyw4xvvsh82" path="res://Assets/Baño/espejo.png" id="8_vngbi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7ctj"]
+size = Vector2(48, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqmxa"]
+size = Vector2(42, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rsid"]
+size = Vector2(18, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0bkd"]
+size = Vector2(20, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxnic"]
+size = Vector2(96, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs4ld"]
+size = Vector2(95, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmrks"]
+size = Vector2(21, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykjrl"]
+size = Vector2(64, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grle2"]
+size = Vector2(55, 59)
+
+[node name="Baño" type="Node2D"]
+script = ExtResource("1_nnuun")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(288, 162)
+texture = ExtResource("2_xyjp8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(286.5, 265)
+texture = ExtResource("3_npn4r")
+
+[node name="Ducha" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ducha"]
+position = Vector2(379.25, 129)
+scale = Vector2(1.01064, 1)
+texture = ExtResource("4_iclci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ducha"]
+position = Vector2(380, 148.5)
+shape = SubResource("RectangleShape2D_m7ctj")
+
+[node name="Area2D" type="Area2D" parent="Ducha"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ducha/Area2D"]
+position = Vector2(382, 121.5)
+shape = SubResource("RectangleShape2D_dqmxa")
+debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
+
+[node name="Inodoro" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Inodoro"]
+position = Vector2(311, 141)
+texture = ExtResource("5_euiwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inodoro"]
+position = Vector2(308, 144.5)
+shape = SubResource("RectangleShape2D_4rsid")
+
+[node name="Area2D" type="Area2D" parent="Inodoro"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inodoro/Area2D"]
+position = Vector2(308, 133.5)
+shape = SubResource("RectangleShape2D_t0bkd")
+debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
+
+[node name="ArmarioBaño" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ArmarioBaño"]
+z_index = 1
+position = Vector2(262, 233)
+texture = ExtResource("6_p7cmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmarioBaño"]
+position = Vector2(263, 238.5)
+shape = SubResource("RectangleShape2D_kxnic")
+
+[node name="Area2D" type="Area2D" parent="ArmarioBaño"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmarioBaño/Area2D"]
+position = Vector2(262.5, 235.5)
+shape = SubResource("RectangleShape2D_bs4ld")
+debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
+
+[node name="Toallas" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Toallas"]
+position = Vector2(343, 115)
+texture = ExtResource("7_tmvfr")
+
+[node name="Area2D" type="Area2D" parent="Toallas"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toallas/Area2D"]
+position = Vector2(343.5, 112)
+shape = SubResource("RectangleShape2D_rmrks")
+debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
+
+[node name="Espejo" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Espejo"]
+position = Vector2(250.25, 123)
+scale = Vector2(1.00909, 1)
+texture = ExtResource("8_vngbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Espejo"]
+position = Vector2(246, 144)
+shape = SubResource("RectangleShape2D_ykjrl")
+
+[node name="Area2D" type="Area2D" parent="Espejo"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Espejo/Area2D"]
+position = Vector2(250.5, 115.5)
+shape = SubResource("RectangleShape2D_grle2")
+debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(160, 220, 215, 220, 215, 265, 402, 265, 402, 140, 215, 140, 215, 170, 160, 170, 160, 168, 213, 168, 213, 138, 406, 138, 406, 265, 406, 268, 200, 268)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c0cswhdcg1kyw"
+path="res://.godot/imported/baño1.dialogue-42c809df63160a55ff8a0f8488beced5.tres"
+
+[deps]
+
+source_file="res://Dialogue/baño1.dialogue"
+dest_files=["res://.godot/imported/baño1.dialogue-42c809df63160a55ff8a0f8488beced5.tres"]
+
+[params]
+
+defaults=true
