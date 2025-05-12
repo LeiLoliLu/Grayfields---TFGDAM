@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Objects/Allen/allen.gd" id="1_2biyg"]
 [ext_resource type="SpriteFrames" uid="uid://cf25ey408sn5a" path="res://SpriteFrames/allen_gs.tres" id="2_m84um"]
 [ext_resource type="SpriteFrames" uid="uid://cas717stb2qm0" path="res://SpriteFrames/allen_c.tres" id="3_7itwh"]
-[ext_resource type="Texture2D" uid="uid://d0fbnf1w6xibh" path="res://Assets/spaceKey.png" id="4_37w2o"]
+[ext_resource type="Texture2D" uid="uid://d0fbnf1w6xibh" path="res://Assets/UI_ASSETS/spaceKey.png" id="4_37w2o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t206s"]
 radius = 9.0

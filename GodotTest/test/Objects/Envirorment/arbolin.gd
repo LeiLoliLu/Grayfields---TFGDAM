@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 	
@@ -17,22 +17,13 @@ func showInteraction(player):
 	get_tree().paused = true
 		
 	DialogueManager.dialogue_ended.connect(_unpause)
-	
-	if !interactedWith:
-		player.agregar_al_diario("Nuestro árbol")
-	
-	
-	
-	
-	
-func _unpause(resource):
+
+func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
+	if !interactedWith:
+		Allen.agregar_al_diario("Nuestro árbol")
+	interactedWith = true
 	
-	# Busca el notificador en la escena
-	var notificador = get_tree().get_current_scene().get_node("CanvasLayer/Notificador")
-	if notificador && !interactedWith:
-		notificador.mostrar_mensaje("¡Diario Actualizado!")
-		interactedWith = true
 
 	

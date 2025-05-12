@@ -7,28 +7,21 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 	
 func showInteraction(player):
-	player.agregar_al_diario("La piedra")
 	var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/area1.dialogue"), "piedron")
 	interaction.process_mode=Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
-	
-	if !interactedWith:
-		player.agregar_al_diario("La piedra")
 		
 	DialogueManager.dialogue_ended.connect(_unpause)
-	
-	
-func _unpause(resource):
+
+func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
-	
-	var notificador = get_tree().get_current_scene().get_node("CanvasLayer/Notificador")
-	if notificador && !interactedWith:
-		notificador.mostrar_mensaje("¡Diario Actualizado!")
-		interactedWith = true
+	if !interactedWith:
+		Allen.agregar_al_diario("La piedra")
+	interactedWith = true
 	

@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxfiwuyn524og"]
+[gd_scene load_steps=15 format=3 uid="uid://cxfiwuyn524og"]
 
-[ext_resource type="Texture2D" uid="uid://df8btfqb4vmk6" path="res://Assets/mundo.png" id="1_glrae"]
+[ext_resource type="Texture2D" uid="uid://df8btfqb4vmk6" path="res://Assets/Envirorment/mundo.png" id="1_glrae"]
 [ext_resource type="Script" path="res://mundo.gd" id="1_ngpge"]
-[ext_resource type="PackedScene" uid="uid://do6m68xmyyy2a" path="res://Objects/Allen/allen.tscn" id="3_7vj4h"]
 [ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="3_6845e"]
 [ext_resource type="PackedScene" uid="uid://bsq60u2bwpmkt" path="res://Objects/Envirorment/arbol.tscn" id="4_n2crc"]
 [ext_resource type="PackedScene" uid="uid://dtdvngfywe5xq" path="res://Objects/Envirorment/tocon.tscn" id="5_o5jsl"]
@@ -13,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://d4l4buwd4nn16" path="res://Objects/Envirorment/arbolin.tscn" id="10_uruxe"]
 [ext_resource type="PackedScene" uid="uid://bnuf6d5p3evvm" path="res://Objects/Envirorment/edificioCasaAllen.tscn" id="11_t2r6y"]
 [ext_resource type="Script" path="res://Objects/Envirorment/lago.gd" id="12_wdxgc"]
-[ext_resource type="AudioStream" uid="uid://hlxjdo5am275" path="res://Assets/Audio/JustAForest.mp3" id="14_ht7pu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqkgt"]
 size = Vector2(23, 199)
@@ -30,12 +28,8 @@ z_index = -1
 position = Vector2(960, 543)
 texture = ExtResource("1_glrae")
 
-[node name="Allen" parent="." instance=ExtResource("3_7vj4h")]
-position = Vector2(358, 662)
-collision_mask = 1
-
 [node name="Tulip" parent="." instance=ExtResource("3_6845e")]
-position = Vector2(411, 632)
+position = Vector2(346, 447)
 
 [node name="Arbol" parent="." instance=ExtResource("4_n2crc")]
 position = Vector2(560, 898)
@@ -113,10 +107,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LagoBound/Area2D"]
 position = Vector2(11.5, 647.5)
 shape = SubResource("RectangleShape2D_gxob6")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_ht7pu")
-autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

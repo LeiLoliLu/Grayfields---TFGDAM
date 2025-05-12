@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var menu = preload("res://Objects/UI/menu.tscn").instantiate()
+@onready var menu = preload("res://Objects/UI/Menu/menu.tscn").instantiate()
 var menu_open = false
 var interaction_countdown = 6
 var tulip_event_executed = false
@@ -14,7 +14,6 @@ func _ready():
 	call_deferred("add_allen_to_scene")
 	Allen.global_position = Vector2(189, 185)
 	
-	$SoundEffectsPlayer.process_mode=Node.PROCESS_MODE_ALWAYS
 	$Tulip.siguiendo=false
 	$Tulip.visible=false
 	$Tulip/TulipInteractionZone/CollisionShape2D.disabled=true
@@ -55,9 +54,8 @@ func _on_tulip_parte1_end(_resource):
 	await Allen.mover_a_posicion_objetivo(Vector2(292, 204), 5.0)
 	Allen.get_node("AnimatedSprite2D").stop()
 	
-	$SoundEffectsPlayer.stream= load("res://Assets/Audio/OpenDoor.mp3")
-	$SoundEffectsPlayer.volume_db=-20
-	$SoundEffectsPlayer.play()
+	SoundEffectPlayer.stream= load("res://Assets/Audio/OpenDoor.mp3")
+	SoundEffectPlayer.play()
 	$Tulip/AnimatedSprite2D.play("Left")
 	$Tulip/AnimatedSprite2D.stop()
 	$Tulip.visible=true
@@ -74,16 +72,17 @@ func _on_tulip_parte2_end(_resource):
 	$Tulip/AnimatedSprite2D.stop()
 	await get_tree().create_timer(0.5).timeout
 	$Tulip.visible=false
-	$SoundEffectsPlayer.stream= load("res://Assets/Audio/CloseDoor.mp3")
-	$SoundEffectsPlayer.volume_db=-20
-	$SoundEffectsPlayer.play()
+	SoundEffectPlayer.stream= load("res://Assets/Audio/CloseDoor.mp3")
+	SoundEffectPlayer.play()
 	
 	get_tree().paused = false
 	Allen.agregar_mision("Encontrar el lazo")
 	Allen.can_move = true
 
 func exit():
-	$SoundEffectsPlayer.stream= load("res://Assets/Audio/OpenDoor.mp3")
+	Allen.comesFrom ="AllenBedroom"
+	SoundEffectPlayer.stream= load("res://Assets/Audio/OpenDoor.mp3")
+	SoundEffectPlayer.play()
 	var current_scene = get_tree().current_scene
 	Allen.owner = null
 	get_tree().root.add_child(Allen)

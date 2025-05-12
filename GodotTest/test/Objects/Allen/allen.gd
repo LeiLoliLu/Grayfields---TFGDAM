@@ -11,6 +11,7 @@ var misiones: Array[String] = []
 var diario: Array[String] = []
 var inventario: Array[String] = []
 var raycastSize = 70
+var comesFrom: String 
 
 var path_history: Array[Vector2] = []
 const history_spacing = 5.0

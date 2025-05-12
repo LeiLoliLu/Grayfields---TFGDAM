@@ -1,23 +1,32 @@
 ~ espejo
+do show_portrait("allen10")
 Allen: (Vaya pelos llevo.)
+do show_portrait("allen1")
 Allen: (...)
+do show_portrait("allen2")
 Allen: (...Falta un cepillo de dientes.)
 => END!
 
 ~ toallas
+do show_portrait("allen1")
 Allen: (Una está mojada. Tulip se habrá duchado ya.)
 => END!
 
 ~ ducha
+do show_portrait("allen10")
 Allen: (No necesito ducharme.)
 => END!
 
 ~ inodoro
+do show_portrait("allen9")
 Allen: (El trono de todo rey.)
 => END!
 
 ~ armario_bath
+do show_portrait("allen1")
 Allen: (Pasta de dientes...)
+do show_portrait("allen10")
 Allen: (Algunas medicinas...)
+do show_portrait("allen3")
 Allen: (Y 101 cremas diferentes de Tulip con nombres que ni sé pronunciar.)
 => END!

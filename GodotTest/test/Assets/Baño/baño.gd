@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var menu = preload("res://Objects/UI/menu.tscn").instantiate()
+@onready var menu = preload("res://Objects/UI/Menu/menu.tscn").instantiate()
 var menu_open = false
 
 
@@ -30,3 +30,17 @@ func _process(_delta):
 
 func add_allen_to_scene():
 	add_child(Allen)
+
+
+func goPasillo():
+	Allen.comesFrom ="Bathroom"
+	SoundEffectPlayer.stream = load("res://Assets/Audio/OpenDoor.mp3")
+	SoundEffectPlayer.play()
+	var current_scene = get_tree().current_scene
+	Allen.owner = null
+	get_tree().root.add_child(Allen)
+	current_scene.queue_free()
+	var next = load("res://pasillo.tscn")
+	var new_scene = next.instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene = new_scene

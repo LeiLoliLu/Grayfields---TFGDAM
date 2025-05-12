@@ -253,6 +253,3 @@ debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
 
 [node name="Tulip" parent="." instance=ExtResource("19_0y0f2")]
 position = Vector2(432, 202)
-
-[node name="SoundEffectsPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -20.0

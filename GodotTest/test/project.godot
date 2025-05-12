@@ -19,8 +19,9 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Allen="*res://Objects/Allen/allen.tscn"
-Notificador="*res://Objects/UI/notification.tscn"
-MasterAudio="*res://Objects/UI/MasterAudio.tscn"
+MasterAudio="*res://Objects/UI/MasterAudio/MasterAudio.tscn"
+Notificador="*res://Objects/UI/Notification/notification.tscn"
+SoundEffectPlayer="*res://Objects/UI/MasterAudio/SoundEffectPlayer.tscn"
 
 [dialogue_manager]
 
