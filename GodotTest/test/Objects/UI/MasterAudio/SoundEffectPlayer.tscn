@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ub3rrodrobw"]
+
+[ext_resource type="Script" path="res://Objects/UI/MasterAudio/sound_effect_player.gd" id="1_fddln"]
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+script = ExtResource("1_fddln")

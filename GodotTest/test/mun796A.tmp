@@ -1,0 +1,122 @@
+[gd_scene load_steps=17 format=3 uid="uid://cxfiwuyn524og"]
+
+[ext_resource type="Texture2D" uid="uid://df8btfqb4vmk6" path="res://Assets/Envirorment/mundo.png" id="1_glrae"]
+[ext_resource type="Script" path="res://mundo.gd" id="1_ngpge"]
+[ext_resource type="PackedScene" uid="uid://do6m68xmyyy2a" path="res://Objects/Allen/allen.tscn" id="3_7vj4h"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="3_6845e"]
+[ext_resource type="PackedScene" uid="uid://bsq60u2bwpmkt" path="res://Objects/Envirorment/arbol.tscn" id="4_n2crc"]
+[ext_resource type="PackedScene" uid="uid://dtdvngfywe5xq" path="res://Objects/Envirorment/tocon.tscn" id="5_o5jsl"]
+[ext_resource type="PackedScene" uid="uid://djdylcryf1lv2" path="res://Objects/Envirorment/arbolCaido.tscn" id="6_pujeo"]
+[ext_resource type="PackedScene" uid="uid://dmv77ximxitrp" path="res://Objects/Envirorment/arbusto1.tscn" id="7_6ye8p"]
+[ext_resource type="PackedScene" uid="uid://d31xoxxnr32el" path="res://Objects/Envirorment/arbusto2.tscn" id="8_50tu0"]
+[ext_resource type="PackedScene" uid="uid://qtcbeflpwio2" path="res://Objects/Envirorment/piedron.tscn" id="9_7h417"]
+[ext_resource type="PackedScene" uid="uid://d4l4buwd4nn16" path="res://Objects/Envirorment/arbolin.tscn" id="10_uruxe"]
+[ext_resource type="PackedScene" uid="uid://bnuf6d5p3evvm" path="res://Objects/Envirorment/edificioCasaAllen.tscn" id="11_t2r6y"]
+[ext_resource type="Script" path="res://Objects/Envirorment/lago.gd" id="12_wdxgc"]
+[ext_resource type="AudioStream" uid="uid://hlxjdo5am275" path="res://Assets/Audio/JustAForest.mp3" id="14_ht7pu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqkgt"]
+size = Vector2(23, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxob6"]
+size = Vector2(59, 217)
+
+[node name="Mundo" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ngpge")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(960, 543)
+texture = ExtResource("1_glrae")
+
+[node name="Allen" parent="." instance=ExtResource("3_7vj4h")]
+position = Vector2(346, 454)
+
+[node name="Tulip" parent="." instance=ExtResource("3_6845e")]
+position = Vector2(411, 632)
+
+[node name="Arbol" parent="." instance=ExtResource("4_n2crc")]
+position = Vector2(560, 898)
+
+[node name="Arbol2" parent="." instance=ExtResource("4_n2crc")]
+position = Vector2(1030, 853)
+scale = Vector2(-1, 1)
+
+[node name="Arbol3" parent="." instance=ExtResource("4_n2crc")]
+position = Vector2(668, 402)
+
+[node name="Arbol4" parent="." instance=ExtResource("4_n2crc")]
+position = Vector2(1404, 286)
+
+[node name="Arbol5" parent="." instance=ExtResource("4_n2crc")]
+position = Vector2(1287, 478)
+scale = Vector2(-1, 1)
+
+[node name="Tocon" parent="." instance=ExtResource("5_o5jsl")]
+position = Vector2(264, 613)
+
+[node name="Tocon2" parent="." instance=ExtResource("5_o5jsl")]
+position = Vector2(1602, 206)
+
+[node name="Tocon3" parent="." instance=ExtResource("5_o5jsl")]
+position = Vector2(1721, 466)
+
+[node name="ArbolCaido" parent="." instance=ExtResource("6_pujeo")]
+position = Vector2(1571, 573)
+
+[node name="Arbusto1" parent="." instance=ExtResource("7_6ye8p")]
+position = Vector2(429, 456)
+
+[node name="Arbusto2" parent="." instance=ExtResource("7_6ye8p")]
+position = Vector2(866, 365)
+
+[node name="Arbusto3" parent="." instance=ExtResource("8_50tu0")]
+position = Vector2(263, 463)
+
+[node name="Arbusto4" parent="." instance=ExtResource("8_50tu0")]
+position = Vector2(773, 653)
+
+[node name="Arbusto5" parent="." instance=ExtResource("8_50tu0")]
+position = Vector2(1360, 831)
+
+[node name="Piedron" parent="." instance=ExtResource("9_7h417")]
+position = Vector2(995, 297)
+
+[node name="Arbolin" parent="." instance=ExtResource("10_uruxe")]
+position = Vector2(601, 542)
+
+[node name="EdificioCasaAllen" parent="." instance=ExtResource("11_t2r6y")]
+position = Vector2(412, 436)
+
+[node name="Bounds" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(-1, 747, 28, 746, 48, 753, 63, 774, 70, 795, 91, 799, 119, 807, 152, 805, 194, 793, 248, 809, 263, 831, 264, 862, 300, 874, 314, 903, 390, 920, 405, 955, 470, 972, 530, 956, 588, 976, 642, 954, 710, 968, 775, 955, 833, 966, 897, 954, 955, 970, 1019, 955, 1079, 966, 1144, 954, 1200, 970, 1269, 950, 1327, 971, 1483, 898, 1501, 900, 1525, 868, 1545, 864, 1562, 810, 1631, 788, 1680, 805, 1732, 786, 1756, 738, 1816, 723, 1925, 727, 1925, 1092, 0, 1091)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(-8, 547, 40, 545, 65, 489, 81, 452, 81, 424, 102, 369, 104, 352, 87, 323, 86, 272, 120, 223, 107, 159, 165, 159, 171, 118, 1630, 116, 1651, 153, 1678, 173, 1688, 222, 1710, 249, 1723, 292, 1762, 316, 1759, 361, 1926, 366, 1932, -21, -21, -10)
+
+[node name="LagoBound" type="StaticBody2D" parent="."]
+collision_mask = 0
+script = ExtResource("12_wdxgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LagoBound"]
+position = Vector2(11.5, 646.5)
+shape = SubResource("RectangleShape2D_xqkgt")
+
+[node name="Area2D" type="Area2D" parent="LagoBound"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LagoBound/Area2D"]
+position = Vector2(11.5, 647.5)
+shape = SubResource("RectangleShape2D_gxob6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ht7pu")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="body_entered" from="LagoBound/Area2D" to="LagoBound" method="_on_area_2d_body_entered"]
