@@ -50,3 +50,16 @@ func goBathroom():
 	var new_scene = next.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene = new_scene
+
+func goDown():
+	Allen.comesFrom ="Pasillo"
+	SoundEffectPlayer.stream = load("res://Assets/Audio/OpenDoor.mp3")
+	SoundEffectPlayer.play()
+	var current_scene = get_tree().current_scene
+	Allen.owner = null
+	get_tree().root.add_child(Allen)
+	current_scene.queue_free()
+	#var next = load("res://Assets/Baño/baño.tscn")
+	var new_scene = next.instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene = new_scene

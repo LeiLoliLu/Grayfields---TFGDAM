@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4ghisohd8kn6"]
+[gd_scene load_steps=16 format=3 uid="uid://d4ghisohd8kn6"]
 
 [ext_resource type="Script" path="res://pasillo.gd" id="1_g68nd"]
 [ext_resource type="Texture2D" uid="uid://4qhv8cwb12og" path="res://Assets/CuartoAllen/fondoPasillo.png" id="2_3g6pb"]
@@ -12,9 +12,6 @@ size = Vector2(55, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkteo"]
 size = Vector2(146, 104)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_84no2"]
-size = Vector2(77, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6evds"]
 size = Vector2(30, 64)
@@ -30,6 +27,12 @@ size = Vector2(44, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va7te"]
 size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84no2"]
+size = Vector2(77, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1i6w"]
+size = Vector2(77, 20)
 
 [node name="Pasillo" type="Node2D"]
 position = Vector2(0, -1)
@@ -63,10 +66,6 @@ shape = SubResource("RectangleShape2D_i5frg")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(343, 273)
 shape = SubResource("RectangleShape2D_gkteo")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(242.5, 326)
-shape = SubResource("RectangleShape2D_84no2")
 
 [node name="PuertaCuartoAllen" type="StaticBody2D" parent="."]
 script = ExtResource("4_omueo")
@@ -115,3 +114,16 @@ collision_mask = 0
 position = Vector2(432, 188)
 shape = SubResource("RectangleShape2D_va7te")
 debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
+
+[node name="PuertaEscaleras" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="PuertaEscaleras"]
+position = Vector2(242.5, 326)
+shape = SubResource("RectangleShape2D_84no2")
+
+[node name="Area2D" type="Area2D" parent="PuertaEscaleras"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaEscaleras/Area2D"]
+position = Vector2(242.5, 335)
+shape = SubResource("RectangleShape2D_e1i6w")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
