@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d4ghisohd8kn6"]
+[gd_scene load_steps=16 format=3 uid="uid://d4ghisohd8kn6"]
 
 [ext_resource type="Script" path="res://pasillo.gd" id="1_g68nd"]
 [ext_resource type="Texture2D" uid="uid://4qhv8cwb12og" path="res://Assets/CuartoAllen/fondoPasillo.png" id="2_3g6pb"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://puerta_cuarto_allen.gd" id="4_omueo"]
 [ext_resource type="Script" path="res://puerta_tulip.gd" id="5_ttx84"]
 [ext_resource type="Script" path="res://puerta_baño.gd" id="6_22rb3"]
-[ext_resource type="Script" path="res://puerta_escaleras.gd" id="7_4qqmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5frg"]
 size = Vector2(55, 104)
@@ -117,15 +116,12 @@ shape = SubResource("RectangleShape2D_va7te")
 debug_color = Color(0.869114, 0.655616, 0.988016, 0.42)
 
 [node name="PuertaEscaleras" type="StaticBody2D" parent="."]
-script = ExtResource("7_4qqmf")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="PuertaEscaleras"]
 position = Vector2(242.5, 326)
 shape = SubResource("RectangleShape2D_84no2")
 
 [node name="Area2D" type="Area2D" parent="PuertaEscaleras"]
-collision_layer = 4
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaEscaleras/Area2D"]
 position = Vector2(242.5, 335)

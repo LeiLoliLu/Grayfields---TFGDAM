@@ -1,0 +1,320 @@
+[gd_scene load_steps=43 format=3 uid="uid://2sjtkxnah8vu"]
+
+[ext_resource type="Script" path="res://Objects/PlantaBaja/planta_baja.gd" id="1_8xsln"]
+[ext_resource type="Texture2D" uid="uid://sbowj2f7853d" path="res://Assets/PlantaBaja/plantaBajaFondo.png" id="2_2181d"]
+[ext_resource type="Texture2D" uid="uid://rig8yyg2k412" path="res://Assets/PlantaBaja/plantaBajaOverlay.png" id="3_ijs03"]
+[ext_resource type="Script" path="res://Objects/Tulip/tulipCocina.gd" id="3_td5xy"]
+[ext_resource type="Texture2D" uid="uid://dfhs6o67kh1wh" path="res://Assets/PlantaBaja/cocina4.png" id="4_ghbvy"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/frigorifico.gd" id="4_urf0g"]
+[ext_resource type="Texture2D" uid="uid://cnh7wf5yrf16n" path="res://Assets/PlantaBaja/cocina3.png" id="5_l31mw"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/cocina_4.gd" id="6_00qhk"]
+[ext_resource type="Texture2D" uid="uid://b0hnnaoipp604" path="res://Assets/PlantaBaja/cocina2.png" id="6_a4bm0"]
+[ext_resource type="Texture2D" uid="uid://b3xp65nh7hnuk" path="res://Assets/PlantaBaja/cocina1.png" id="7_frl65"]
+[ext_resource type="Texture2D" uid="uid://beubrxdaelhur" path="res://Assets/PlantaBaja/frigorifico.png" id="8_pbaia"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/cocina_3.gd" id="8_x34l0"]
+[ext_resource type="Texture2D" uid="uid://dklhfbxu6rbhs" path="res://Assets/PlantaBaja/mesita.png" id="9_hdjug"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/cocina_2.gd" id="10_jop4y"]
+[ext_resource type="Texture2D" uid="uid://cke8ysekyc5yt" path="res://Assets/PlantaBaja/mesaPlatosSillas.png" id="10_v8gte"]
+[ext_resource type="Texture2D" uid="uid://c8vvvtbd5mkov" path="res://Assets/PlantaBaja/tv.png" id="11_ukgcd"]
+[ext_resource type="Texture2D" uid="uid://sqc75lqwx6be" path="res://Assets/PlantaBaja/sofa.png" id="12_7081r"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/cocina_1.gd" id="12_84585"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/mesita.gd" id="14_br4wk"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/mesasillas.gd" id="16_nytmy"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/tv.gd" id="18_iym6e"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/sofa.gd" id="20_gbajx"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="22_heur5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5oya"]
+size = Vector2(38, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag1lt"]
+size = Vector2(38, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvpi0"]
+size = Vector2(65, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bu21"]
+size = Vector2(65, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54f7d"]
+size = Vector2(78, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bud8r"]
+size = Vector2(77, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahda8"]
+size = Vector2(67, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oavwq"]
+size = Vector2(67, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3rds"]
+size = Vector2(36, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pe6h"]
+size = Vector2(36, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paep5"]
+size = Vector2(22, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbh4"]
+size = Vector2(10, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c730"]
+size = Vector2(36, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u624"]
+size = Vector2(79, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi827"]
+size = Vector2(91, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8op4"]
+size = Vector2(26, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4yea"]
+size = Vector2(22, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_528ss"]
+size = Vector2(36, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8w7y"]
+size = Vector2(31, 80)
+
+[node name="PlantaBaja" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(288, 162)
+script = ExtResource("1_8xsln")
+
+[node name="Tulip" parent="." instance=ExtResource("22_heur5")]
+y_sort_enabled = true
+position = Vector2(175, -17)
+script = ExtResource("3_td5xy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_2181d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0.499994, 140)
+texture = ExtResource("3_ijs03")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="frigorifico" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("4_urf0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="frigorifico"]
+position = Vector2(-73, -68.75)
+scale = Vector2(1, 1.00617)
+texture = ExtResource("8_pbaia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frigorifico"]
+position = Vector2(-73, -72.5)
+shape = SubResource("RectangleShape2D_h5oya")
+
+[node name="Area2D" type="Area2D" parent="frigorifico"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frigorifico/Area2D"]
+position = Vector2(-73, -78)
+shape = SubResource("RectangleShape2D_ag1lt")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="cocina4" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("6_00qhk")
+
+[node name="Sprite2D" type="Sprite2D" parent="cocina4"]
+position = Vector2(112.25, -83)
+scale = Vector2(1.00323, 1)
+texture = ExtResource("4_ghbvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cocina4"]
+position = Vector2(157.5, -80)
+shape = SubResource("RectangleShape2D_pvpi0")
+
+[node name="Area2D" type="Area2D" parent="cocina4"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cocina4/Area2D"]
+position = Vector2(157.5, -77.5)
+shape = SubResource("RectangleShape2D_8bu21")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="cocina3" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("8_x34l0")
+
+[node name="Sprite2D" type="Sprite2D" parent="cocina3"]
+position = Vector2(86.5, -53.5)
+scale = Vector2(1, 1)
+texture = ExtResource("5_l31mw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cocina3"]
+position = Vector2(86, -72.5)
+shape = SubResource("RectangleShape2D_54f7d")
+
+[node name="Area2D" type="Area2D" parent="cocina3"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cocina3/Area2D"]
+position = Vector2(86.5, -70.5)
+shape = SubResource("RectangleShape2D_bud8r")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="cocina2" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("10_jop4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="cocina2"]
+position = Vector2(14.5, -53.5)
+scale = Vector2(1.01515, 1)
+texture = ExtResource("6_a4bm0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cocina2"]
+position = Vector2(14.5, -72.5)
+shape = SubResource("RectangleShape2D_ahda8")
+
+[node name="Area2D" type="Area2D" parent="cocina2"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cocina2/Area2D"]
+position = Vector2(14.5, -64)
+shape = SubResource("RectangleShape2D_oavwq")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="cocina1" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("12_84585")
+
+[node name="Sprite2D" type="Sprite2D" parent="cocina1"]
+position = Vector2(-36.5, -53.5)
+scale = Vector2(0.972222, 1)
+texture = ExtResource("7_frl65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cocina1"]
+position = Vector2(-37, -72.5)
+shape = SubResource("RectangleShape2D_r3rds")
+
+[node name="Area2D" type="Area2D" parent="cocina1"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cocina1/Area2D"]
+position = Vector2(-37, -64)
+shape = SubResource("RectangleShape2D_1pe6h")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="mesita" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("14_br4wk")
+
+[node name="Sprite2D" type="Sprite2D" parent="mesita"]
+position = Vector2(128, 60)
+texture = ExtResource("9_hdjug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesita"]
+position = Vector2(128, 57.5)
+shape = SubResource("RectangleShape2D_paep5")
+
+[node name="Area2D" type="Area2D" parent="mesita"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesita/Area2D"]
+position = Vector2(128, 53)
+shape = SubResource("RectangleShape2D_bcbh4")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="mesasillas" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("16_nytmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="mesasillas"]
+position = Vector2(-91.5, 40.5)
+scale = Vector2(1, 1)
+texture = ExtResource("10_v8gte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesasillas"]
+position = Vector2(-117, 66.5)
+shape = SubResource("RectangleShape2D_0c730")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="mesasillas"]
+position = Vector2(-66, 66.5)
+shape = SubResource("RectangleShape2D_0c730")
+
+[node name="Area2D" type="Area2D" parent="mesasillas"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesasillas/Area2D"]
+position = Vector2(-91.5, 34)
+shape = SubResource("RectangleShape2D_0u624")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="mesasillas"]
+position = Vector2(-91.5, 40)
+shape = SubResource("RectangleShape2D_gi827")
+
+[node name="tv" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("18_iym6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="tv"]
+position = Vector2(176.25, 55)
+scale = Vector2(1.02, 1)
+texture = ExtResource("11_ukgcd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tv"]
+position = Vector2(177, 57)
+shape = SubResource("RectangleShape2D_h8op4")
+
+[node name="Area2D" type="Area2D" parent="tv"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tv/Area2D"]
+position = Vector2(179, 51.5)
+shape = SubResource("RectangleShape2D_l4yea")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="sofa" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_mask = 0
+script = ExtResource("20_gbajx")
+
+[node name="Sprite2D" type="Sprite2D" parent="sofa"]
+position = Vector2(73.25, 54.5)
+scale = Vector2(1.01351, 1)
+texture = ExtResource("12_7081r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sofa"]
+position = Vector2(73, 59.5)
+shape = SubResource("RectangleShape2D_528ss")
+
+[node name="Area2D" type="Area2D" parent="sofa"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sofa/Area2D"]
+position = Vector2(72.5, 54)
+shape = SubResource("RectangleShape2D_e8w7y")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)

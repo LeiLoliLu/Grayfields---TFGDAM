@@ -42,11 +42,13 @@ var objetos = [
 	"Huevos",
 	"Miel de Agatha",
 	"Jabón",
-	"Mr Coconut"
+	"Mr Coconut",
+	"Lazo"
 ]
 
 var mission_thoughts = {
 	"Encontrar el lazo": "Tiene que estar en alguna parte.",
+	"Dale el lazo a Tulip": "Su legítima dueña.",
 	"Hacer la compra": "Por poco que quiera, para limpiar se necesita jabón.",
 	"Encontrar al gato de Lauren": "Mr Coconut ha salido a dar una vuelta.",
 	"Devuelvele el gato a Lauren": "Hora de llevarte con tu dueña, chiquitín."
@@ -75,5 +77,6 @@ var item_thoughts = {
 	"Huevos": "El alimento más versátil que has visto en tu vida.",
 	"Miel de Agatha": "La etiqueta tiene un dibujo raro.",
 	"Jabón": "Qué pocas ganas tengo de fregar.",
-	"Mr Coconut": "El gato de Lauren. Tulip lo adora a morir."
+	"Mr Coconut": "El gato de Lauren. Tulip lo adora a morir.",
+	"Lazo":"El 'lazo favorito' de Tulip."
 }

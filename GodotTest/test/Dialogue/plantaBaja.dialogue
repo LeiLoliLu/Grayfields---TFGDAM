@@ -1,0 +1,77 @@
+~ frigorifico
+do show_portrait("allen1")
+Allen: (No tengo hambre, la verdad.)
+=> END!
+
+~ cocina1
+do show_portrait("allen4")
+Allen: (Espero que no haya metido el lazo al microondas. No sería la primera vez.)
+=> END!
+
+~ cocina2
+do show_portrait("allen6")
+Allen: (Demasiadas cosas amontonadas. No pienso meter la mano ahí.)
+do show_portrait("allen11")
+Allen: (Además nos hemos quedado sin jabón.)
+=> END!
+
+~ cocina3
+do show_portrait("allen7")
+Allen: (Un estofado de lazo no me convence.)
+=> END!
+
+~ cocina4
+do show_portrait("allen2")
+Allen: (No, por aquí solo hay latas, paquetes de comida seca envasada y poco más.)
+=> END!
+
+~ mesita
+do show_portrait("allen7")
+Allen: (Nada por aquí... Nada por allá...)
+=> END!
+
+~ mesasillas
+do show_portrait("allen1")
+Allen: (Los restos de la cena de ayer. Le toca a Tulip recoger.)
+do show_portrait("allen7")
+Allen: (Una de las sillas cojea un poco.)
+=> END!
+
+~ tv
+do show_portrait("allen3")
+Allen: (Tulip podría tirarse horas viendo el canal de teletienda.)
+=> END!
+
+~ sofa1
+do show_portrait("allen2")
+Allen: (Polvo y migas. ¿Hay algo debajo?)
+=> END!
+
+~ sofa2
+do show_portrait("allen1")
+Allen: …Aquí está.
+=> END!
+
+~ sofa3
+do show_portrait("allen11")
+Allen: (...Tengo que pasar la escoba por ahí abajo con urgencia.)
+=> END!
+
+~ escaleras
+do show_portrait("allen1")
+Allen: (No tiene sentido mirar ahí arriba.)
+=> END!
+
+~ fuera
+do show_portrait("allen10")
+Allen: (No puedo irme así sin más.)
+=> END!
+
+~ tulipTalk
+do show_portrait("allen2")
+Allen: ¿Seguro que lo perdiste aquí?
+do show_portrait("tulip3")
+Tulip: Sip. Estaba poniéndomelo y luego, puff, desapareció.
+do show_portrait("allen10")
+Allen: (No veo cómo puede desaparecer un lazo así de repente.)
+=> END!

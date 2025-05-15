@@ -1,0 +1,43 @@
+extends StaticBody2D
+var interact_count = 0
+@onready var sprite_2d: Sprite2D = $Sprite2D
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	DialogueManager.process_mode = Node.PROCESS_MODE_ALWAYS
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+	
+	
+func showInteraction(_player):
+	if interact_count==0:
+		interact_count+=1
+		var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/plantaBaja.dialogue"), "sofa1")
+		interaction.process_mode=Node.PROCESS_MODE_ALWAYS
+		get_tree().paused = true
+	elif interact_count==1:
+		interact_count+=1
+		var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/plantaBaja.dialogue"), "sofa2")
+		sprite_2d.texture=load("res://Assets/PlantaBaja/sofa2.png")
+		interaction.process_mode=Node.PROCESS_MODE_ALWAYS
+		get_tree().paused = true
+		
+
+	else:
+		var interaction = DialogueManager.show_dialogue_balloon(load("res://Dialogue/plantaBaja.dialogue"), "sofa3")
+		interaction.process_mode=Node.PROCESS_MODE_ALWAYS
+		get_tree().paused = true
+		
+	DialogueManager.dialogue_ended.connect(_unpause)
+	
+	
+func _unpause(_resource):
+	get_tree().paused = false
+	DialogueManager.dialogue_ended.disconnect(_unpause)
+	if interact_count==2:
+		Allen.agregar_al_inventario("Lazo")
+		Allen.misiones.erase("Encontrar el lazo")
+		await get_tree().create_timer(2).timeout
+		Allen.agregar_mision("Dale el lazo a Tulip")
