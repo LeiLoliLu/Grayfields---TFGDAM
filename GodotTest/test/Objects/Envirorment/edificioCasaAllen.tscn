@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnuf6d5p3evvm"]
 
 [ext_resource type="Script" path="res://Objects/Envirorment/edificio_casa_allen.gd" id="1_i02of"]
-[ext_resource type="Texture2D" uid="uid://dvvnnwcmlu4ov" path="res://Assets/casaAllen.png" id="1_uxfag"]
+[ext_resource type="Texture2D" uid="uid://dvvnnwcmlu4ov" path="res://Assets/Envirorment/casaAllen.png" id="1_uxfag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjf1l"]
 size = Vector2(153, 116)

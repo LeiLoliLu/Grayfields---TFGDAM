@@ -48,7 +48,7 @@ Tulip: ¿Hermanito?
 do show_portrait("allen12")
 Allen: (Mierda.)
 do show_portrait("allen10")
-Allen: …Buenos Días
+Allen: …Buenos Días.
 do show_portrait("tulip6")
 Tulip: ¡Buenos Días!
 do show_portrait("allen1")

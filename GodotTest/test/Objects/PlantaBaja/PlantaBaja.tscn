@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://2sjtkxnah8vu"]
+[gd_scene load_steps=49 format=3 uid="uid://2sjtkxnah8vu"]
 
 [ext_resource type="Script" path="res://Objects/PlantaBaja/planta_baja.gd" id="1_8xsln"]
 [ext_resource type="Texture2D" uid="uid://sbowj2f7853d" path="res://Assets/PlantaBaja/plantaBajaFondo.png" id="2_2181d"]
@@ -23,6 +23,8 @@
 [ext_resource type="Script" path="res://Objects/PlantaBaja/tv.gd" id="18_iym6e"]
 [ext_resource type="Script" path="res://Objects/PlantaBaja/sofa.gd" id="20_gbajx"]
 [ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="22_heur5"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/puerta_escaleras.gd" id="24_2bq3f"]
+[ext_resource type="Script" path="res://Objects/PlantaBaja/puerta_entrada.gd" id="25_lhygk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5oya"]
 size = Vector2(38, 58)
@@ -80,6 +82,18 @@ size = Vector2(36, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8w7y"]
 size = Vector2(31, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_niq0f"]
+size = Vector2(44, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ln1pg"]
+size = Vector2(44, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nqvq"]
+size = Vector2(81, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jfy4"]
+size = Vector2(81, 30)
 
 [node name="PlantaBaja" type="Node2D"]
 y_sort_enabled = true
@@ -158,7 +172,6 @@ script = ExtResource("8_x34l0")
 
 [node name="Sprite2D" type="Sprite2D" parent="cocina3"]
 position = Vector2(86.5, -53.5)
-scale = Vector2(1, 1)
 texture = ExtResource("5_l31mw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cocina3"]
@@ -249,7 +262,6 @@ script = ExtResource("16_nytmy")
 
 [node name="Sprite2D" type="Sprite2D" parent="mesasillas"]
 position = Vector2(-91.5, 40.5)
-scale = Vector2(1, 1)
 texture = ExtResource("10_v8gte")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mesasillas"]
@@ -317,4 +329,41 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sofa/Area2D"]
 position = Vector2(72.5, 54)
 shape = SubResource("RectangleShape2D_e8w7y")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="bounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bounds"]
+polygon = PackedVector2Array(-76, 162, -76, 137, -188, 137, -188, -56, 189, -56, 189, 137, -21, 137, -21, 162, -16, 162, -16, 141, 203, 141, 203, -73, -200, -73, -200, 162)
+
+[node name="puertaEscaleras" type="StaticBody2D" parent="."]
+script = ExtResource("24_2bq3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertaEscaleras"]
+position = Vector2(-149, -66)
+shape = SubResource("RectangleShape2D_niq0f")
+
+[node name="Area2D" type="Area2D" parent="puertaEscaleras"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertaEscaleras/Area2D"]
+position = Vector2(-149, -95)
+shape = SubResource("RectangleShape2D_ln1pg")
+debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)
+
+[node name="puertaEntrada" type="StaticBody2D" parent="."]
+script = ExtResource("25_lhygk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertaEntrada"]
+position = Vector2(-48.5, 172)
+shape = SubResource("RectangleShape2D_0nqvq")
+
+[node name="Area2D" type="Area2D" parent="puertaEntrada"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertaEntrada/Area2D"]
+position = Vector2(-48.5, 177)
+shape = SubResource("RectangleShape2D_4jfy4")
 debug_color = Color(0.659739, 0.396885, 0.84043, 0.42)

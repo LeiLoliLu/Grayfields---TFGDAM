@@ -1,14 +1,16 @@
 extends Node
+#TODO: Clean Assets
+#TODO: Add inbetween beat sprite change
+#TODO: find out why the fuck it moves
 
 @onready var music = $AudioStreamPlayer
-@onready var label = $Label
 
 var beat_time_ms = 750 
 var margin = 200
 var counter = 0
 var target_beats_ms = []
 var max_beat = 48
-var delay = 250
+var delay = 0
 
 func _ready():
 	for i in range(1, max_beat + 1): 
@@ -25,11 +27,10 @@ func _process(_delta):
 			
 			if diff <= margin:
 				counter += 1
-				label.text = "✅ ¡Perfecto! Llevas "+str(counter)
-				
+				$AllenDibujo.texture=load("res://Assets/BallGame/allen2.png")	
+				$KidsDibujo.texture=load("res://Assets/BallGame/kids4.png")
 				target_beats_ms.erase(target_time_ms)
-				if target_beats_ms.is_empty():
-					label.text = "¡Fin! Aciertos totales: "+str(counter)+"/12"
 				return
 			else:
-				label.text = "❌ ¡Fallo! :("
+				$AllenDibujo.texture=load("res://Assets/BallGame/allen3.png")
+				$KidsDibujo.texture=load("res://Assets/BallGame/kids5.png")

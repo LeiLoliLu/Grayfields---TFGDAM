@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var tulipLazo = false
 
 # Posiciones en coordenadas LOCALES (no globales)
 const POS_1 = Vector2(175, -15)
 const POS_2 = Vector2(-73, -15)
+var looking="Right"
 var target_pos = POS_2
 
 const SPEED = 50.0
@@ -29,8 +31,10 @@ func move_to_position(destination: Vector2):
 	var direction = (destination - position).normalized()
 
 	if direction.x > 0:
+		looking = "Right"
 		anim_sprite.play("Right")
 	elif direction.x < 0:
+		looking = "Left"
 		anim_sprite.play("Left")
 
 	await mover_a_posicion_objetivo(destination, duration)
@@ -42,12 +46,18 @@ func mover_a_posicion_objetivo(destino: Vector2, duracion: float) -> void:
 	anim_sprite.stop()
 
 func look_up():
+	looking="Up"
 	anim_sprite.play("Up")
 	anim_sprite.stop()
 	await get_tree().create_timer(5.0).timeout
 	
 func interactuar():
-	var hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/plantaBaja.dialogue"), "tulipTalk")
+	var hi;
+	if Allen.inventario.has("Lazo"):
+		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/plantaBaja.dialogue"), "tulipLazo")
+		tulipLazo=true
+	else:
+		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/plantaBaja.dialogue"), "tulipTalk")
 
 	# Ejemplo: Allen.last_direction = "Right" --> tú miras "Left"
 	match Allen.last_direction:
@@ -71,10 +81,9 @@ func interactuar():
 func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
- #TODO: Arreglar si está mirando hacia arriba que vuelva a mirar hacia arriba
-	if target_pos == POS_1:
-		anim_sprite.play("Right")
+	if !tulipLazo:
+		anim_sprite.play(looking)
+		if looking=="Up":
+			anim_sprite.stop()
 	else:
-		anim_sprite.play("Left")
-	
-	
+		$"..".reload_tulip()

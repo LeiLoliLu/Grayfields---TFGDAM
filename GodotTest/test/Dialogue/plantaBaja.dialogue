@@ -75,3 +75,26 @@ Tulip: Sip. Estaba poniéndomelo y luego, puff, desapareció.
 do show_portrait("allen10")
 Allen: (No veo cómo puede desaparecer un lazo así de repente.)
 => END!
+
+~ tulipLazo
+
+do show_portrait("tulip6")
+Tulip: ¡Sabía que lo encontrarías rápido! Eres un genio, Allen.
+do show_portrait("allen1")
+Allen: (...Tampoco era tan difícil.)
+do show_portrait("tulip1")
+Tulip: Ahora vamos al pueblo, hay que comprar cosas.
+do show_portrait("allen2")
+Allen: …No hace falta que vaya.
+do show_portrait("tulip4")
+Tulip: Hace mucho que no sales. Solo un rato, ¿porfi?
+do show_portrait("allen4")
+Allen: …
+do show_portrait("tulip7")
+Tulip: …
+do show_portrait("allen10")
+Allen: …Hmn.
+do show_portrait("tulip6")
+Tulip: ¡Venga, vamos!
+
+=> END!

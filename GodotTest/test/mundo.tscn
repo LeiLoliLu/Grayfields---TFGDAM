@@ -29,7 +29,7 @@ position = Vector2(960, 543)
 texture = ExtResource("1_glrae")
 
 [node name="Tulip" parent="." instance=ExtResource("3_6845e")]
-position = Vector2(346, 447)
+position = Vector2(314, 466)
 
 [node name="Arbol" parent="." instance=ExtResource("4_n2crc")]
 position = Vector2(560, 898)

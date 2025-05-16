@@ -18,6 +18,7 @@ const history_spacing = 5.0
 const max_history_length = 200
 
 var seguimiento_activo := false
+@onready var AllenRay: RayCast2D = $RayCast2D
 
 func _ready():
 	if not Notificador.is_inside_tree():
@@ -33,8 +34,8 @@ func _ready():
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_SPACE):
-		if $RayCast2D.is_colliding() and can_move:
-			var obj = $RayCast2D.get_collider().get_parent()
+		if AllenRay.is_colliding() and can_move:
+			var obj = AllenRay.get_collider().get_parent()
 			if obj is CharacterBody2D and obj.name == "Tulip":
 				obj.interactuar()
 			else:
@@ -44,8 +45,8 @@ func _input(_event):
 
 func _process(_delta):
 	if can_move:
-		if $RayCast2D.is_colliding():
-			var obj = $RayCast2D.get_collider().get_parent()
+		if AllenRay.is_colliding():
+			var obj = AllenRay.get_collider().get_parent()
 			if obj is CharacterBody2D and obj.name == "Tulip" or obj.has_method("showInteraction"):
 				$CanvasLayer.visible = true
 		else:
@@ -76,11 +77,11 @@ func _process(_delta):
 			if abs(input_vector.x) > abs(input_vector.y):
 				last_direction = "Right" if input_vector.x > 0 else "Left"
 				$AnimatedSprite2D.play(last_direction)
-				$RayCast2D.target_position = Vector2(1 if input_vector.x > 0 else -1, 0) * raycastSize
+				AllenRay.target_position = Vector2(1 if input_vector.x > 0 else -1, 0) * raycastSize
 			else:
 				last_direction = "Down" if input_vector.y > 0 else "Up"
 				$AnimatedSprite2D.play(last_direction)
-				$RayCast2D.target_position = Vector2(0, 1 if input_vector.y > 0 else -1) * raycastSize
+				AllenRay.target_position = Vector2(0, 1 if input_vector.y > 0 else -1) * raycastSize
 		else:
 			$AnimatedSprite2D.stop()
 

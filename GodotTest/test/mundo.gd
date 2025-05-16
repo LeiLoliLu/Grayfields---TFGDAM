@@ -4,14 +4,17 @@ extends Node2D
 var menu_open = false
 
 func _ready():
+	Allen.seguimiento_activo=true
+	Allen.path_history.clear()
+	Allen.position = Vector2(346,454)
 	if Allen.get_parent() != self:
 		Allen.get_parent().call_deferred("remove_child", Allen)
 	call_deferred("add_allen_to_scene")
-	Allen.global_position = Vector2(346,454)
 	Allen.get_node("Camera2D").enabled=true
 	Allen.raycastSize = 75
 	Allen.can_move=true
-	Allen.seguimiento_activo=true
+	Allen.y_sort_enabled=true
+	$Tulip.y_sort_enabled=true
 	
 	if not MasterAudio.is_inside_tree():
 		get_tree().root.add_child(MasterAudio)
