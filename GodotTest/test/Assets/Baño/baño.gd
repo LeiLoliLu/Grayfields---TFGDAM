@@ -6,6 +6,9 @@ var menu_open = false
 
 
 func _ready():
+	if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/Home.mp3"):
+		MasterAudio.stream=load("res://Assets/Audio/Home.mp3")
+		MasterAudio.play()
 	if Allen.get_parent() != self:
 		Allen.get_parent().call_deferred("remove_child", Allen)
 	call_deferred("add_allen_to_scene")
@@ -20,7 +23,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_tab"):
+	if Input.is_action_just_pressed("ui_tab") && Allen.can_move:
 		menu_open = !menu_open
 		menu.visible = menu_open
 		menu.actualizar_misiones(Allen)

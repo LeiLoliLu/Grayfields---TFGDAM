@@ -6,10 +6,13 @@ var can_leave=false
 var menu_open = false
 
 func _ready():
+	if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/Home.mp3"):
+		MasterAudio.stream=load("res://Assets/Audio/Home.mp3")
+		MasterAudio.play()
 	if Allen.get_parent() != self:
 		Allen.get_parent().call_deferred("remove_child", Allen)
 	call_deferred("add_allen_to_scene")
-	Allen.global_position = Vector2(-149, -41)
+	Allen.position = Vector2(-149, -41)
 	Allen.y_sort_enabled=true
 	
 	Allen.can_move=true
@@ -21,7 +24,7 @@ func _ready():
 	$Tulip/Hitbox.disabled=true
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_tab"):
+	if Input.is_action_just_pressed("ui_tab") && Allen.can_move:
 		menu_open = !menu_open
 		menu.visible = menu_open
 		menu.actualizar_misiones(Allen)

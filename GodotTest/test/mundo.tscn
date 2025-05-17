@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cxfiwuyn524og"]
+[gd_scene load_steps=18 format=3 uid="uid://cxfiwuyn524og"]
 
 [ext_resource type="Texture2D" uid="uid://df8btfqb4vmk6" path="res://Assets/Envirorment/mundo.png" id="1_glrae"]
 [ext_resource type="Script" path="res://mundo.gd" id="1_ngpge"]
@@ -12,12 +12,18 @@
 [ext_resource type="PackedScene" uid="uid://d4l4buwd4nn16" path="res://Objects/Envirorment/arbolin.tscn" id="10_uruxe"]
 [ext_resource type="PackedScene" uid="uid://bnuf6d5p3evvm" path="res://Objects/Envirorment/edificioCasaAllen.tscn" id="11_t2r6y"]
 [ext_resource type="Script" path="res://Objects/Envirorment/lago.gd" id="12_wdxgc"]
+[ext_resource type="Script" path="res://next_area_bound.gd" id="13_c8hjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqkgt"]
 size = Vector2(23, 199)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxob6"]
 size = Vector2(59, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmd3k"]
+size = Vector2(55, 351)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ynqs"]
 
 [node name="Mundo" type="Node2D"]
 y_sort_enabled = true
@@ -110,4 +116,20 @@ shape = SubResource("RectangleShape2D_gxob6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="NextAreaBound" type="StaticBody2D" parent="."]
+collision_mask = 0
+script = ExtResource("13_c8hjv")
+
+[node name="Area2D" type="Area2D" parent="NextAreaBound"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextAreaBound/Area2D"]
+position = Vector2(1936, 546)
+shape = SubResource("RectangleShape2D_nmd3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextAreaBound"]
+position = Vector2(1939, 387)
+shape = SubResource("RectangleShape2D_6ynqs")
+
 [connection signal="body_entered" from="LagoBound/Area2D" to="LagoBound" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="NextAreaBound/Area2D" to="NextAreaBound" method="_on_area_2d_body_entered"]

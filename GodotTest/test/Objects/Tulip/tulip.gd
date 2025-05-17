@@ -59,3 +59,4 @@ func _process(_delta):
 func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
+	

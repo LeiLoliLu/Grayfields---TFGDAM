@@ -1,0 +1,42 @@
+~ rio
+do show_portrait("allen1")
+Allen: (Oscura. Fría.)
+=> END
+
+~ tulip
+do show_portrait("tulip11")
+Tulip: Recuerdo cuando casi moriste en este río.
+do show_portrait("allen7")
+Allen: ...¿Quieres decir, cuando me empujaste?
+do show_portrait("allen4")
+Allen: Es agua, Tulip. Y me llegaba a las rodillas.
+do show_portrait("tulip8")
+Tulip: Nimiedades.
+do show_portrait("allen4")
+Allen: Intentaste hacerme un funeral con hojas.
+do show_portrait("tulip7")
+Tulip: ¡Era lo mínimo después de tu trágica pérdida!
+do show_portrait("allen10")
+Allen: Estaba literalmente de pie en la orilla.
+do show_portrait("tulip1")
+Tulip: Mimimimimi. Jajajaja.
+
+- Empujar a Tulip
+	do show_portrait("tulip15")
+	Tulip se tambalea, pero mantiene el equilibrio.
+	do show_portrait("tulip13")
+	Tulip: ¡Traición!
+	do show_portrait("allen9")
+	Allen: Justicia.
+	do show_portrait("tulip13")
+	Tulip: ¡Mi venganza será devastadora!
+- Dejarlo estar
+	do show_portrait("tulip3")
+	Tulip: Huh. Me esperaba una venganza inmediata.
+	do show_portrait("allen7")
+	Allen: Demasiado esfuerzo.
+	do show_portrait("tulip6")
+	Tulip: Oh, entonces tengo vía libre para empujarte yo. Genial.
+	do show_portrait("allen4")
+	Allen: Ni se te ocurra.
+=> END!

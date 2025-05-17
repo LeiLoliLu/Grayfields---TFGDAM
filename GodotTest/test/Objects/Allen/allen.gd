@@ -7,9 +7,9 @@ const speed = 90.0
 var last_direction = "Down"
 var can_move = false
 
-var misiones: Array[String] = []
-var diario: Array[String] = []
-var inventario: Array[String] = []
+var misiones: Array = []
+var diario: Array = []
+var inventario: Array = []
 var raycastSize = 70
 var comesFrom: String 
 
@@ -36,7 +36,7 @@ func _input(_event):
 	if Input.is_key_pressed(KEY_SPACE):
 		if AllenRay.is_colliding() and can_move:
 			var obj = AllenRay.get_collider().get_parent()
-			if obj is CharacterBody2D and obj.name == "Tulip":
+			if obj.has_method("interactuar"):
 				obj.interactuar()
 			else:
 				if obj.has_method("showInteraction"):
@@ -47,7 +47,7 @@ func _process(_delta):
 	if can_move:
 		if AllenRay.is_colliding():
 			var obj = AllenRay.get_collider().get_parent()
-			if obj is CharacterBody2D and obj.name == "Tulip" or obj.has_method("showInteraction"):
+			if obj.has_method("showInteraction") or obj.has_method("interactuar"):
 				$CanvasLayer.visible = true
 		else:
 			$CanvasLayer.visible = false

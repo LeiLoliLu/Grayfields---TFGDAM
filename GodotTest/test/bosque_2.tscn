@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://d18ywu7d3ten7"]
+
+[ext_resource type="Script" path="res://bosque_2.gd" id="1_rgy47"]
+[ext_resource type="Texture2D" uid="uid://dcv41fbau4fqx" path="res://Assets/Envirorment/Area2Fondo.png" id="2_hl387"]
+[ext_resource type="Texture2D" uid="uid://c0hc7vr06yu1k" path="res://Assets/Envirorment/ArbolDownL.png" id="3_m0pis"]
+[ext_resource type="Texture2D" uid="uid://bj37bfhv2tx3" path="res://Assets/Envirorment/ArbolDownR.png" id="4_jq3s8"]
+[ext_resource type="Texture2D" uid="uid://bybql85l2sa1m" path="res://Assets/Envirorment/ArbolesUpL.png" id="5_7elei"]
+[ext_resource type="Texture2D" uid="uid://ceav6v0etovwt" path="res://Assets/Envirorment/ArbolesUpR.png" id="6_v6aco"]
+[ext_resource type="Texture2D" uid="uid://1pa0c5k4nipa" path="res://Assets/Envirorment/puente1.png" id="7_gsuj7"]
+[ext_resource type="Texture2D" uid="uid://0g0ganjujx3f" path="res://Assets/Envirorment/puente2.png" id="8_dm6i8"]
+[ext_resource type="Script" path="res://rio.gd" id="9_hhlgf"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="10_g3wkh"]
+[ext_resource type="Script" path="res://Objects/Tulip/tulipArea2.gd" id="11_6e2ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r57a8"]
+size = Vector2(180, 2)
+
+[node name="Bosque2" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_rgy47")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(480, 271.5)
+texture = ExtResource("2_hl387")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Trees" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="AbajoIzq" type="Sprite2D" parent="Trees"]
+position = Vector2(181.75, 453)
+scale = Vector2(1.00138, 1)
+texture = ExtResource("3_m0pis")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees"]
+position = Vector2(181.75, 453)
+scale = Vector2(1.00138, 1)
+polygon = PackedVector2Array(-187.492, -57, -175.508, -60, -159.53, -44, -134.565, -41, -112.595, -61, -72.6499, -65, -31.7063, -46, -3.74484, -48, 13.2318, -61, 46.1864, -65, 69.1547, -55, 80.1396, -37, 88.1286, -24, 99.1135, -9, 116.09, 4, 146.049, 10, 162.027, 24, 181.999, 27, 191.986, 96, -187.492, 96)
+
+[node name="Trees2" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="AbajoDer" type="Sprite2D" parent="Trees2"]
+position = Vector2(723, 446.25)
+scale = Vector2(1, 1.00259)
+texture = ExtResource("4_jq3s8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees2"]
+polygon = PackedVector2Array(505, 549, 499, 473, 555, 454, 577, 465, 580, 423, 604, 407, 618, 377, 640, 375, 672, 387, 698, 402, 733, 397, 755, 375, 809, 378, 824, 393, 835, 396, 858, 379, 891, 373, 920, 383, 941, 399, 958, 415, 968, 428, 968, 549)
+
+[node name="Trees3" type="StaticBody2D" parent="."]
+
+[node name="ArribaIzq" type="Sprite2D" parent="Trees3"]
+position = Vector2(194, 84)
+texture = ExtResource("5_7elei")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees3"]
+polygon = PackedVector2Array(-14, 149, 38, 149, 68, 133, 118, 133, 138, 152, 178, 151, 186, 133, 225, 133, 252, 151, 285, 151, 351, 120, 367, 93, 371, -12, -14, -12)
+
+[node name="Trees4" type="StaticBody2D" parent="."]
+
+[node name="ArribaIzq2" type="Sprite2D" parent="Trees4"]
+position = Vector2(735.25, 111)
+scale = Vector2(1.00111, 1)
+texture = ExtResource("6_v6aco")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees4"]
+polygon = PackedVector2Array(964, 196, 917, 196, 872, 184, 829, 199, 783, 201, 731, 152, 685, 149, 628, 105, 526, 100, 508, 87, 508, -15, 964, -15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(445.5, 290)
+texture = ExtResource("8_dm6i8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(445, 294)
+shape = SubResource("RectangleShape2D_r57a8")
+
+[node name="Bridge" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bridge"]
+position = Vector2(445.5, 257)
+texture = ExtResource("7_gsuj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge"]
+position = Vector2(445, 228)
+shape = SubResource("RectangleShape2D_r57a8")
+
+[node name="Rio" type="StaticBody2D" parent="."]
+script = ExtResource("9_hhlgf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rio"]
+polygon = PackedVector2Array(355, 209, 376, 135, 370, 68, 370, 58, 371, -16, 514, -10, 510, 124, 536, 207, 536, 226)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rio"]
+polygon = PackedVector2Array(370, 307, 367, 330, 361, 385, 361, 421, 361, 458, 361, 491, 374, 556, 504, 554, 529, 465, 510, 447, 519, 347, 517, 307)
+
+[node name="Area2D" type="Area2D" parent="Rio"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rio/Area2D"]
+polygon = PackedVector2Array(373, 308, 368, 381, 365, 467, 371, 558, 502, 562, 509, 450, 507, 420, 514, 307)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rio/Area2D"]
+polygon = PackedVector2Array(379, -19, 378, 82, 383, 192, 382, 208, 511, 210, 508, 77, 508, -12)
+
+[node name="Tulip" parent="." instance=ExtResource("10_g3wkh")]
+position = Vector2(-15, 308)
+script = ExtResource("11_6e2ts")

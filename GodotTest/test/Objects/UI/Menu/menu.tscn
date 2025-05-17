@@ -192,5 +192,44 @@ vertical_alignment = 1
 autowrap_mode = 2
 clip_text = true
 
+[node name="Ajustes" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_tab_index = 3
+
+[node name="Columna" type="MarginContainer" parent="TabContainer/Ajustes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ListaBotones" type="VBoxContainer" parent="TabContainer/Ajustes/Columna"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Guardar" type="Button" parent="TabContainer/Ajustes/Columna/ListaBotones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Guardar Partida"
+
+[node name="Cargar" type="Button" parent="TabContainer/Ajustes/Columna/ListaBotones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Cargar Partida"
+
+[node name="Salir" type="Button" parent="TabContainer/Ajustes/Columna/ListaBotones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Salir"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_h06tl")
+
+[connection signal="pressed" from="TabContainer/Ajustes/Columna/ListaBotones/Guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="TabContainer/Ajustes/Columna/ListaBotones/Cargar" to="." method="_on_cargar_pressed"]
+[connection signal="pressed" from="TabContainer/Ajustes/Columna/ListaBotones/Salir" to="." method="_on_salir_pressed"]

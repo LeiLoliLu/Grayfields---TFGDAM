@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://r7bxhiy5v1y4"]
+
+[ext_resource type="Script" path="res://ballTime.gd" id="1_m1fhp"]
+[ext_resource type="AudioStream" uid="uid://cdcwurr4g53g" path="res://Assets/Audio/ItsBallTime.mp3" id="2_8irvc"]
+[ext_resource type="Texture2D" uid="uid://e5lglvkofcqg" path="res://Assets/BallGame/BallgameFondo.png" id="3_gee52"]
+[ext_resource type="Texture2D" uid="uid://mdmy554x2nqw" path="res://Assets/BallGame/allen3.png" id="4_ylp7l"]
+[ext_resource type="Texture2D" uid="uid://tws4lmwmvklt" path="res://Assets/BallGame/allen2.png" id="5_ntus5"]
+[ext_resource type="Texture2D" uid="uid://baqw51uuk6cqv" path="res://Assets/BallGame/allen1.png" id="6_7a8wr"]
+[ext_resource type="Texture2D" uid="uid://djxbnum7src7s" path="res://Assets/BallGame/kids1.png" id="7_2qmei"]
+[ext_resource type="Texture2D" uid="uid://d2sj5f00breqn" path="res://Assets/BallGame/kids2.png" id="8_qq7vg"]
+[ext_resource type="Texture2D" uid="uid://bokan5a70vpqh" path="res://Assets/BallGame/kids3.png" id="9_ou6vl"]
+[ext_resource type="Texture2D" uid="uid://bnv1158s6atfx" path="res://Assets/BallGame/kids4.png" id="10_x8my7"]
+[ext_resource type="Texture2D" uid="uid://v7tpn0n5yy0g" path="res://Assets/BallGame/kids5.png" id="11_wx6na"]
+
+[node name="BallTime" type="Node2D"]
+script = ExtResource("1_m1fhp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8irvc")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(288, 162)
+texture = ExtResource("3_gee52")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(1.5, 1.5)
+
+[node name="AllenDibujo3" type="Sprite2D" parent="."]
+position = Vector2(-35.5, 196.5)
+texture = ExtResource("4_ylp7l")
+offset = Vector2(191, 34)
+
+[node name="AllenDibujo2" type="Sprite2D" parent="."]
+position = Vector2(4.5, 187.5)
+texture = ExtResource("5_ntus5")
+offset = Vector2(191, 34)
+
+[node name="AllenDibujo" type="Sprite2D" parent="."]
+position = Vector2(-47.5, 187.5)
+texture = ExtResource("6_7a8wr")
+offset = Vector2(191, 34)
+
+[node name="KidsDibujo" type="Sprite2D" parent="."]
+position = Vector2(439, 131)
+texture = ExtResource("7_2qmei")
+
+[node name="KidsDibujo2" type="Sprite2D" parent="."]
+position = Vector2(434, 126)
+texture = ExtResource("8_qq7vg")
+
+[node name="KidsDibujo3" type="Sprite2D" parent="."]
+position = Vector2(390, 148)
+texture = ExtResource("9_ou6vl")
+
+[node name="KidsDibujo4" type="Sprite2D" parent="."]
+position = Vector2(420.5, 131)
+scale = Vector2(1.00602, 1)
+texture = ExtResource("10_x8my7")
+
+[node name="KidsDibujo5" type="Sprite2D" parent="."]
+position = Vector2(420.5, 131)
+scale = Vector2(1.00602, 1)
+texture = ExtResource("11_wx6na")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+offset_right = 860.0
+offset_bottom = 460.0
+color = Color(0, 0, 0, 1)

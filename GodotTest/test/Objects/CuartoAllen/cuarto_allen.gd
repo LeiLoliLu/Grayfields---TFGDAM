@@ -26,7 +26,7 @@ func _ready():
 	Allen.raycastSize = 45
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_tab"):
+	if Input.is_action_just_pressed("ui_tab") && Allen.can_move:
 		menu_open = !menu_open
 		menu.visible = menu_open
 		menu.actualizar_misiones(Allen)
