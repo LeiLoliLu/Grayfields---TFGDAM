@@ -7,10 +7,9 @@ var ballPlay = true
 
 func _ready():
 	$FadeRect.modulate.a = 0.0
-	#Missing Import of the song
-	#if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/SteppingStones.mp3"):
-	#	MasterAudio.stream=load("res://Assets/Audio/SteppingStones.mp3")
-	#	MasterAudio.play()
+	if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/SteppingStones.mp3"):
+		MasterAudio.stream=load("res://Assets/Audio/SteppingStones.mp3")
+		MasterAudio.play()
 	ballPlayStart()
 	Allen.can_move=false
 	Allen.path_history.clear()

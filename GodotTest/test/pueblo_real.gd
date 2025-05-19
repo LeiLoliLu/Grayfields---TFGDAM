@@ -5,9 +5,9 @@ var menu_open = false
 
 func _ready():
 	$FadeRect.visible=true
-	#if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/SteppingStones.mp3"):
-	#	MasterAudio.stream=load("res://Assets/Audio/SteppingStones.mp3")
-	#	MasterAudio.play()
+	if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/SteppingStones.mp3"):
+		MasterAudio.stream=load("res://Assets/Audio/SteppingStones.mp3")
+		MasterAudio.play()
 	if Allen.get_parent() != self:
 		Allen.get_parent().call_deferred("remove_child", Allen)
 	call_deferred("add_allen_to_scene")

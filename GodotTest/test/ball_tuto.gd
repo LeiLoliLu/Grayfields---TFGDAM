@@ -34,6 +34,7 @@ var last_kids_sprite : Node = null
 # Ya no usamos una lista fija de beats
 # Generamos beats sobre la marcha
 func _ready():
+	MasterAudio.stop()
 	var tween = create_tween()
 	tween.tween_property($FadeRect, "modulate:a", 0.0, 3.0)
 	await tween.finished

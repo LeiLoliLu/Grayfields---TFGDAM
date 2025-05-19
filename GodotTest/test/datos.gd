@@ -17,7 +17,7 @@ var diario_contenido = {
 	
 	"El baño": "El baño está casi igual que siempre. Las toallas aún huelen a jabón barato, ni pista de la pasta de dientes, y un armario lleno de cremas con nombres imposibles. Son todas de Tulip.\n\nCada una de sus cosas ocupan más espacio del que deberían, igual que ella.\n\nFalta un cepillo de dientes. El suyo, creo.\n\nA veces me pregunto si un día dejará de estar en cada rincón de la casa. Y si eso pasa…\n\nNo. No quiero pensar en eso todavía.",
 
-	"Tulip": "Tulip es... muchas cosas. Es mi hermana pequeña, aunque a veces parece que es ella quien me cuida a mí. No sabe estarse quieta. Siempre tiene un plan, una misión, un motivo para arrastrarme fuera de casa. Y siempre, siempre, consigue salirse con la suya. Ya no sé decirle que no. \n\nNo entiendo cómo puede tener tanta energía por la mañana. Ni cómo encuentra tanto entusiasmo en cosas tan...simples. A veces me molesta. Otras veces... me anima. Supongo que eso es lo que hacen las personas importantes.\n\nNo sé qué haría si algún día Tulip no me despierte con esos ojos de desesperado. Probablemente... nada. Probablemente me quedaría donde estoy.\n\nY eso es justo lo que Tulip quiere evitar.",
+	"Tulip": "Tulip es... muchas cosas. Es mi hermana pequeña, aunque a veces parece que es ella quien me cuida a mí. No sabe estarse quieta. Siempre tiene un plan, una misión, un motivo para arrastrarme fuera de casa. Y siempre, siempre, consigue salirse con la suya. Ya no sé decirle que no. \n\nNo entiendo cómo puede tener tanta energía por la mañana. Ni cómo encuentra tanto entusiasmo en cosas tan...simples. A veces me molesta. Otras veces... me anima. Supongo que eso es lo que hacen las personas importantes.\n\nNo sé qué haría si algún día Tulip no me despertase con esos ojos de cachorro desesperado. Probablemente... nada. Probablemente me quedaría donde estoy.\n\nY eso es justo lo que Tulip quiere evitar.",
 		
 	"Tino":"Ugh.\nSiempre tiene algo que decir. O hacer.\n\nEs de esos que huelen el miedo, o la falta de ganas. Podría respirar en su dirección sin querer y ya la tendríamos montada.\n\nNo le caigo bien. Me da igual, él tampoco me cae especialmente bien a mí. Toda mi vida pegandome empujones y riendose de mi.\n\nAl parecer otro día se estampó con la bici contra la piedra del bosque. A veces el universo acierta.\n\nSupongo que todo pueblo necesita un idiota con músculos y autoestima inflada. Nosotros tenemos a Tino. Mientras deje tranquila a mi hermana me da igual.",
 	
@@ -59,7 +59,7 @@ var mission_thoughts = {
 	"Dale el lazo a Tulip": "Su legítima dueña.",
 	"Hacer la compra": "Por poco que quiera, para limpiar se necesita jabón.",
 	"Encontrar al gato de Lauren": "Mr Coconut ha salido a dar una vuelta.",
-	"Devuelvele el gato a Lauren": "Hora de llevarte con tu dueña, chiquitín."
+	"Devuélvele el gato a Lauren": "Hora de llevarte con tu dueña, chiquitín."
 }
 
 var item_thoughts = {

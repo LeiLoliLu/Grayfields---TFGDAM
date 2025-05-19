@@ -21,6 +21,7 @@ func mover_a_posicion_objetivo(destino: Vector2, duracion: float) -> void:
 	await tween.finished
 
 func end_intro(_resource):
+	DialogueManager.dialogue_ended.disconnect(end_intro)
 	await move_the_cat()
 	var hi
 	if Allen.misiones.has("Encontrar al gato de Lauren"):
@@ -30,16 +31,22 @@ func end_intro(_resource):
 	hi.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().paused = true
 	DialogueManager.dialogue_ended.connect(_unpause)
+	$Area2D/CollisionShape2D.disabled=true
 
 func _unpause(_resource):
 	get_tree().paused = false
 	Allen.can_move = true
 	DialogueManager.dialogue_ended.disconnect(_unpause)
-	$AnimatedSprite2D.play("Stop")
+	$"../mrCoconut".visible=false
 	Allen.agregar_al_diario("Lauren")
+	await get_tree().create_timer(1.5).timeout
+	Allen.agregar_mision("Devuélvele el gato a Lauren")
 	interactedWith = true
+	
 
 func move_the_cat():
+	$AnimatedSprite2D.play("Stop")
+	Allen.get_node("AnimatedSprite2D").stop()
 	Allen.can_move = false
 	get_tree().paused = false
 	var mrCoconut = $"../mrCoconut"
@@ -48,20 +55,18 @@ func move_the_cat():
 	var duracion = 2.5 
 
 	# Calcula la rotación necesaria para que el gato se oriente hacia Allen
-	var direccion = destino - mrCoconut.global_position
+	var direccion = mrCoconut.global_position
 	var rotacion = direccion.angle()
 
 	# Calcula la rotación final (con giros múltiples)
-	var rotacion_final = rotacion + (TAU * 2)  # Gira 3 veces y luego vuelve a la posición inicial
+	var rotacion_final = TAU * 5 # Gira 3 veces y luego vuelve a la posición inicial
 
 	# Crea un tween para mover la posición
 	var tween_pos = mrCoconut.create_tween()
 	tween_pos.tween_property(mrCoconut, "global_position", destino, duracion)
 
-	# Crea un tween para la rotación
 	var tween_rot = mrCoconut.create_tween()
 	tween_rot.tween_property(mrCoconut, "rotation", rotacion_final, duracion)
 
-	# Espera a que ambos tweens terminen
 	await tween_pos.finished
 	await tween_rot.finished

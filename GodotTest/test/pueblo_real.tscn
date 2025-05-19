@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dqmkwel844mot"]
+[gd_scene load_steps=43 format=3 uid="uid://dqmkwel844mot"]
 
 [ext_resource type="Script" path="res://pueblo_real.gd" id="1_mya3k"]
 [ext_resource type="Texture2D" uid="uid://chco1ujx83p7q" path="res://Assets/Pueblo/puebloFondo.png" id="2_5m8t2"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" path="res://arbol_coconut.gd" id="13_onxea"]
 [ext_resource type="Texture2D" uid="uid://17ralx3gmmb5" path="res://Assets/Envirorment/arbolCoconutGS.png" id="14_s0mqv"]
 [ext_resource type="Texture2D" uid="uid://brtwygb0j6hra" path="res://Assets/Items/022.png" id="16_gi7hv"]
+[ext_resource type="PackedScene" uid="uid://dmv77ximxitrp" path="res://Objects/Envirorment/arbusto1.tscn" id="17_jquss"]
+[ext_resource type="Texture2D" uid="uid://dqp27ce1voflb" path="res://Assets/Pueblo/farola.png" id="18_disgl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhdeo"]
 atlas = ExtResource("3_014rq")
@@ -173,8 +175,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u46ap"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxy0n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dg01i"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvk4y"]
-size = Vector2(31, 121)
+size = Vector2(31, 66)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nfnqq"]
+radius = 5.0
+height = 28.0
 
 [node name="PuebloReal" type="Node2D"]
 y_sort_enabled = true
@@ -289,27 +301,109 @@ shape = SubResource("RectangleShape2D_c6gd6")
 debug_color = Color(0.829506, 0.517293, 0.874144, 0.42)
 
 [node name="ArbolCoconut" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 script = ExtResource("13_onxea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ArbolCoconut"]
-position = Vector2(1340, 483)
+position = Vector2(1336, 549)
 sprite_frames = SubResource("SpriteFrames_v7qn8")
 animation = &"Move"
 frame_progress = 0.625004
+offset = Vector2(4, -66)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArbolCoconut"]
-polygon = PackedVector2Array(1318, 554, 1324, 556, 1331, 557, 1335, 553, 1343, 557, 1346, 554, 1352, 557, 1355, 551, 1348, 534, 1325, 533)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ArbolCoconut"]
+position = Vector2(1327, 541)
+shape = SubResource("CapsuleShape2D_u46ap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArbolCoconut"]
+position = Vector2(1336, 541)
+shape = SubResource("CapsuleShape2D_oxy0n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ArbolCoconut"]
+position = Vector2(1346, 542)
+shape = SubResource("CapsuleShape2D_dg01i")
 
 [node name="Area2D" type="Area2D" parent="ArbolCoconut"]
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArbolCoconut/Area2D"]
-position = Vector2(1339.5, 496.5)
+position = Vector2(1337, 515)
 shape = SubResource("RectangleShape2D_wvk4y")
 debug_color = Color(0.735748, 0.351814, 0.791805, 0.42)
 
 [node name="mrCoconut" type="Sprite2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(1339, 447)
 texture = ExtResource("16_gi7hv")
+
+[node name="Arbusto4" parent="." instance=ExtResource("17_jquss")]
+position = Vector2(518, 179)
+
+[node name="Arbusto3" parent="." instance=ExtResource("7_jgapv")]
+position = Vector2(874, 179)
+
+[node name="Arbusto1" parent="." instance=ExtResource("17_jquss")]
+position = Vector2(816, 182)
+
+[node name="Arbusto5" parent="." instance=ExtResource("7_jgapv")]
+position = Vector2(1110, 180)
+
+[node name="Arbusto6" parent="." instance=ExtResource("17_jquss")]
+position = Vector2(1158, 162)
+
+[node name="Arbusto7" parent="." instance=ExtResource("7_jgapv")]
+position = Vector2(472, 651)
+
+[node name="Farola2" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(317, 65)
+
+[node name="Sprite2D" type="Sprite2D" parent="Farola2"]
+position = Vector2(782, 225)
+texture = ExtResource("18_disgl")
+offset = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farola2"]
+position = Vector2(782, 225)
+shape = SubResource("CapsuleShape2D_nfnqq")
+
+[node name="Farola" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(28, 61)
+
+[node name="Sprite2D" type="Sprite2D" parent="Farola"]
+position = Vector2(782, 225)
+texture = ExtResource("18_disgl")
+offset = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farola"]
+position = Vector2(782, 225)
+shape = SubResource("CapsuleShape2D_nfnqq")
+
+[node name="Farola3" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(317, 315)
+
+[node name="Sprite2D" type="Sprite2D" parent="Farola3"]
+position = Vector2(782, 225)
+texture = ExtResource("18_disgl")
+offset = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farola3"]
+position = Vector2(782, 225)
+shape = SubResource("CapsuleShape2D_nfnqq")
+
+[node name="Farola4" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(28, 311)
+
+[node name="Sprite2D" type="Sprite2D" parent="Farola4"]
+position = Vector2(782, 225)
+texture = ExtResource("18_disgl")
+offset = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farola4"]
+position = Vector2(782, 225)
+shape = SubResource("CapsuleShape2D_nfnqq")
