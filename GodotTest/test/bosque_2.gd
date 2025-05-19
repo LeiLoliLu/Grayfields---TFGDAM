@@ -54,3 +54,15 @@ func reload_tulip():
 	add_child(new_tulip)
 	Allen.AllenRay.enabled=true
 	can_leave=true
+
+func goNextArea():
+	if can_leave:
+		Allen.comesFrom ="Area2Bosque"
+		var current_scene = get_tree().current_scene
+		Allen.owner = null
+		get_tree().root.add_child(Allen)
+		var next = load("res://pueblo_1.tscn")
+		var new_scene = next.instantiate()
+		get_tree().root.add_child(new_scene)
+		get_tree().current_scene = new_scene
+		current_scene.queue_free()

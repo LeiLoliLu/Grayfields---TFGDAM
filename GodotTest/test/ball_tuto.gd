@@ -34,6 +34,10 @@ var last_kids_sprite : Node = null
 # Ya no usamos una lista fija de beats
 # Generamos beats sobre la marcha
 func _ready():
+	var tween = create_tween()
+	tween.tween_property($FadeRect, "modulate:a", 0.0, 3.0)
+	await tween.finished
+	
 	ready_button.pressed.connect(on_ready_pressed)
 	fade_rect.modulate.a = 0.0  # Asegura que el fondo está transparente
 	
@@ -130,7 +134,7 @@ func handle_beat_visual(beat_number):
 			if last_kids_sprite != null:
 				last_kids_sprite.visible = true
 				squash_and_stretch(last_kids_sprite)
-
+				
 func hide_all_sprites():
 	allen_normal.visible = false
 	allen_acierto.visible = false

@@ -74,9 +74,10 @@ func _on_tulip_parte2_end(_resource):
 	$Tulip.visible=false
 	SoundEffectPlayer.stream= load("res://Assets/Audio/CloseDoor.mp3")
 	SoundEffectPlayer.play()
-	
+		
 	get_tree().paused = false
 	Allen.agregar_mision("Encontrar el lazo")
+	Allen.agregar_al_diario("Tulip")
 	Allen.can_move = true
 
 func exit():

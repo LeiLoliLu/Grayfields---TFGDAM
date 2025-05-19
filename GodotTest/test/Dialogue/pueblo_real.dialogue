@@ -1,0 +1,70 @@
+~ tino_start
+do show_portrait("")
+Tino: ¡El ermitaño en carne y hueso! ¿No terminas de perderte de una vez, o que?
+do show_portrait("allen4")
+Allen: (Tino. Deportista. Molesto. Siempre dispuesto a hacerme la vida un infierno.)
+do show_portrait("allen4")
+Allen: ...No.
+do show_portrait("")
+Tino: Pues a ver si te da por ahí la próxima vez.
+do show_portrait("tulip2")
+Tulip: Tino, déjale en paz.
+do show_portrait("")
+Tino: ¿Aún tienes que estar detrás de tu hermanita para defenderte, palillo?
+do show_portrait("tulip8")
+Tulip: No le hagas caso, Allen, te está tomando el pelo.
+=> END!
+
+~ tino_2
+do show_portrait("")
+Tino: Piérdete, memo.
+do show_portrait("allen4")
+Allen: (Te digo lo mismo.)
+=> END!
+
+~ fred_1
+do show_portrait("")
+Fred: Buenos días a los dos. ¿Todo bien, Al?
+do show_portrait("allen1")
+Allen: Poco a poco, supongo.
+do show_portrait("allen3")
+Allen: (Fred, mi mejor amigo. O al menos el más cercano. Más listo que la mayoría, y lo sabe. Está obsesionado con hacer acertijos.)
+do show_portrait("tulip6")
+Tulip: ¡Buenos días, Freddie!
+do show_portrait("")
+Fred: Estoy terminando un acertijo, ¿Te animas a darle un intento?
+do show_portrait("allen3")
+Allen: …Venga.
+=> END!
+
+~ fred_2
+do show_portrait("allen3")
+Allen: …Nada mal, ¿no?
+do show_portrait("")
+Fred: Hm… Estás un poco oxidado.
+do show_portrait("")
+Fred: Me alegra mucho verte fuera, Al.
+do show_portrait("allen3")
+Allen: Gracias, Fred.
+=> END!
+
+~ coco_intro
+do show_portrait("allen2")
+Allen: ¿?...
+do show_portrait("tulip3")
+Tulip: ¿Qué pasa?
+do show_portrait("allen2")
+Allen: Ahí arriba.
+=> END!
+
+~ coco_1
+do show_portrait("allen3")
+Allen: Asique ahí estabas.
+=> END!
+
+~ coco_2
+do show_portrait("allen2")
+Allen: ¿Mr Coconut?
+do show_portrait("tulip3")
+Tulip: ¡AH! Se le ha debido de escapar a Lauren. Vamos a llevárselo.
+=> END!

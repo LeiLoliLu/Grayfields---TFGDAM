@@ -1,0 +1,172 @@
+[gd_scene load_steps=21 format=3 uid="uid://nbmv1u8f1w8y"]
+
+[ext_resource type="Script" path="res://pueblo1.gd" id="1_kv3bf"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="2_d6hxa"]
+[ext_resource type="Texture2D" uid="uid://chco1ujx83p7q" path="res://Assets/Pueblo/puebloFondo.png" id="2_uxohy"]
+[ext_resource type="Texture2D" uid="uid://24x48t6a6uep" path="res://Assets/Pueblo/niño2sprite.png" id="3_sucsr"]
+[ext_resource type="Texture2D" uid="uid://bsiqfrkt0e254" path="res://Assets/Pueblo/niño1sprite.png" id="4_sksiu"]
+[ext_resource type="Script" path="res://pelota.gd" id="5_47gl3"]
+[ext_resource type="Texture2D" uid="uid://obnoeeefg4hq" path="res://Assets/Pueblo/pelota.png" id="6_23vkd"]
+[ext_resource type="Texture2D" uid="uid://dndi4i41wgub3" path="res://Assets/Pueblo/overlaypueblo1.png" id="8_whwko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmd3m"]
+atlas = ExtResource("3_sucsr")
+region = Rect2(120, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd7lt"]
+atlas = ExtResource("3_sucsr")
+region = Rect2(90, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe3d7"]
+atlas = ExtResource("3_sucsr")
+region = Rect2(30, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwm7h"]
+atlas = ExtResource("3_sucsr")
+region = Rect2(120, 62, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8wqc"]
+atlas = ExtResource("3_sucsr")
+region = Rect2(90, 62, 26, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joqp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmd3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd7lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmd3m")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe3d7")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwm7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8wqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwm7h")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2m7k"]
+atlas = ExtResource("4_sksiu")
+region = Rect2(120, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfq3t"]
+atlas = ExtResource("4_sksiu")
+region = Rect2(90, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06nyt"]
+atlas = ExtResource("4_sksiu")
+region = Rect2(30, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pq38"]
+atlas = ExtResource("4_sksiu")
+region = Rect2(120, 62, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1jjt"]
+atlas = ExtResource("4_sksiu")
+region = Rect2(90, 62, 26, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdj5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2m7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfq3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2m7k")
+}],
+"loop": false,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06nyt")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pq38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1jjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pq38")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[node name="Pueblo1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_kv3bf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(750, 400)
+texture = ExtResource("2_uxohy")
+
+[node name="Pelota" type="CharacterBody2D" parent="."]
+script = ExtResource("5_47gl3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pelota"]
+position = Vector2(243, 336)
+texture = ExtResource("6_23vkd")
+
+[node name="n2" type="CharacterBody2D" parent="."]
+z_index = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="n2"]
+position = Vector2(240, 426)
+sprite_frames = SubResource("SpriteFrames_joqp2")
+animation = &"Up"
+
+[node name="n1" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="n1"]
+position = Vector2(239, 301)
+sprite_frames = SubResource("SpriteFrames_pdj5p")
+animation = &"Down"
+
+[node name="Tulip" parent="." instance=ExtResource("2_d6hxa")]
+position = Vector2(-14, 405)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(750, 400)
+texture = ExtResource("8_whwko")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+z_index = 2
+offset_right = 901.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 1)

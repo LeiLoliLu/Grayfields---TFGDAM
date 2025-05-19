@@ -26,6 +26,7 @@ var last_beat_index = -1
 var waiting_for_input = false
 var current_beat_target_time = 0
 var last_kids_sprite : Node = null
+var aciertos= 0
 
 func _ready():
 	# Start fully black (fade in effect starts here)
@@ -89,6 +90,7 @@ func _process(_delta):
 			last_kids_sprite = kids_acierto
 			target_beats_ms.erase(current_beat_target_time)
 			waiting_for_input = false
+			aciertos+=1
 		else:
 			hide_all_sprites()
 			allen_fallo.visible = true
@@ -177,9 +179,27 @@ func on_music_finished():
 	tween.tween_property(fade_rect, "modulate", color_to, 2.5).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 	
-	# After the fade-out, transition to the tutorial or another scene
-	transition()
+	var hi;
+	
+	if aciertos<=3:
+		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/gameStart.dialogue"), "gameEnd1")
+	elif aciertos<=6:
+		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/gameStart.dialogue"), "gameEnd2")
+	elif aciertos<=11:
+		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/gameStart.dialogue"), "gameEnd3")
+	else:
+		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/gameStart.dialogue"), "gameEnd4")
+	
+	hi.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = false
+	DialogueManager.dialogue_ended.connect(transition)
 
 # Transition to the tutorial scene (or another scene)
-func transition():
-	get_tree().current_scene.queue_free()  # Remove the current scene
+func transition(_resource):
+	var current_scene = get_tree().current_scene
+	var next = load("res://pueblo_real.tscn")
+	var new_scene = next.instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene = new_scene
+	current_scene.queue_free()
+	

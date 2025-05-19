@@ -4,6 +4,7 @@ var siguiendo = true
 var index_offset = 5
 var speed = 90.0
 var min_distance = 2.0
+var inCinematic = false
 
 func _ready() -> void:
 	pass
@@ -25,6 +26,8 @@ func interactuar():
 	DialogueManager.dialogue_ended.connect(_unpause)
 
 func _process(_delta):
+	if inCinematic:
+		return
 	if Allen.seguimiento_activo:
 		set_collision_layer_value(1, false)
 		set_collision_layer_value(4, true)
@@ -60,3 +63,7 @@ func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
 	
+func mover_a_posicion_objetivo(destino: Vector2, duracion: float) -> void:
+	var tween := create_tween()
+	tween.tween_property(self, "global_position", destino, duracion).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	await tween.finished

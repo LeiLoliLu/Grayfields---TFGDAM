@@ -62,3 +62,4 @@ func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
 	$"..".reload_tulip()
+	$"..".can_leave=true

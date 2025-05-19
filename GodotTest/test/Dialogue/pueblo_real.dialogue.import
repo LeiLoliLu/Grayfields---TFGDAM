@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://8yr6i8gswx1f"
+path="res://.godot/imported/pueblo_real.dialogue-b0e1c9713b4449bd88ffb9cdf7380cec.tres"
+
+[deps]
+
+source_file="res://Dialogue/pueblo_real.dialogue"
+dest_files=["res://.godot/imported/pueblo_real.dialogue-b0e1c9713b4449bd88ffb9cdf7380cec.tres"]
+
+[params]
+
+defaults=true

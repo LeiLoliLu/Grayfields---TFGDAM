@@ -1,0 +1,315 @@
+[gd_scene load_steps=37 format=3 uid="uid://dqmkwel844mot"]
+
+[ext_resource type="Script" path="res://pueblo_real.gd" id="1_mya3k"]
+[ext_resource type="Texture2D" uid="uid://chco1ujx83p7q" path="res://Assets/Pueblo/puebloFondo.png" id="2_5m8t2"]
+[ext_resource type="Texture2D" uid="uid://c0pt20fnfvqw3" path="res://Assets/Characters/tinoSprite.png" id="3_014rq"]
+[ext_resource type="Script" path="res://tino.gd" id="3_20v3e"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="3_yovpp"]
+[ext_resource type="Texture2D" uid="uid://ciy3agiheajw5" path="res://Assets/Pueblo/puebloBoundsDown.png" id="4_rr6ie"]
+[ext_resource type="Texture2D" uid="uid://byyddcgfh5y8r" path="res://Assets/Pueblo/puebloboundsup.png" id="5_5t4tk"]
+[ext_resource type="PackedScene" uid="uid://bsq60u2bwpmkt" path="res://Objects/Envirorment/arbol.tscn" id="6_36upl"]
+[ext_resource type="PackedScene" uid="uid://d31xoxxnr32el" path="res://Objects/Envirorment/arbusto2.tscn" id="7_jgapv"]
+[ext_resource type="Texture2D" uid="uid://b0ph2phqbbtqt" path="res://Assets/Pueblo/fuente.png" id="10_a0dyf"]
+[ext_resource type="Texture2D" uid="uid://bw7hycn21uo6t" path="res://Assets/Characters/fredSprite.png" id="11_0w0pe"]
+[ext_resource type="Script" path="res://fred.gd" id="11_18o55"]
+[ext_resource type="Texture2D" uid="uid://db00pwrrlq63h" path="res://Assets/Envirorment/arbolGS.png" id="13_dohgc"]
+[ext_resource type="Script" path="res://arbol_coconut.gd" id="13_onxea"]
+[ext_resource type="Texture2D" uid="uid://17ralx3gmmb5" path="res://Assets/Envirorment/arbolCoconutGS.png" id="14_s0mqv"]
+[ext_resource type="Texture2D" uid="uid://brtwygb0j6hra" path="res://Assets/Items/022.png" id="16_gi7hv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhdeo"]
+atlas = ExtResource("3_014rq")
+region = Rect2(120, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttmdj"]
+atlas = ExtResource("3_014rq")
+region = Rect2(90, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxe0a"]
+atlas = ExtResource("3_014rq")
+region = Rect2(150, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7kca"]
+atlas = ExtResource("3_014rq")
+region = Rect2(120, 62, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu66w"]
+atlas = ExtResource("3_014rq")
+region = Rect2(90, 62, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1eg8"]
+atlas = ExtResource("3_014rq")
+region = Rect2(150, 62, 26, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_860xn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhdeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttmdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhdeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxe0a")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7kca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu66w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7kca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1eg8")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufyw7"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v2by"]
+size = Vector2(26, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2nbm"]
+atlas = ExtResource("11_0w0pe")
+region = Rect2(120, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fnql"]
+atlas = ExtResource("11_0w0pe")
+region = Rect2(30, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exxrc"]
+atlas = ExtResource("11_0w0pe")
+region = Rect2(30, 62, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0xxb"]
+atlas = ExtResource("11_0w0pe")
+region = Rect2(120, 62, 26, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfrw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2nbm")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fnql")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exxrc")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0xxb")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6gd6"]
+size = Vector2(20, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmtkk"]
+atlas = ExtResource("13_dohgc")
+region = Rect2(0, 0, 123, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6y5y"]
+atlas = ExtResource("14_s0mqv")
+region = Rect2(0, 0, 123, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76v3c"]
+atlas = ExtResource("13_dohgc")
+region = Rect2(0, 0, 123, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7qn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmtkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6y5y")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76v3c")
+}],
+"loop": true,
+"name": &"Stop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvk4y"]
+size = Vector2(31, 121)
+
+[node name="PuebloReal" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_mya3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(750, 400)
+texture = ExtResource("2_5m8t2")
+
+[node name="Tino" type="CharacterBody2D" parent="."]
+position = Vector2(559, 196)
+script = ExtResource("3_20v3e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tino"]
+sprite_frames = SubResource("SpriteFrames_860xn")
+animation = &"Down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tino"]
+position = Vector2(0, 20)
+shape = SubResource("CapsuleShape2D_ufyw7")
+
+[node name="RayCast2D" type="RayCast2D" parent="Tino"]
+target_position = Vector2(0, 220)
+collision_mask = 2
+
+[node name="Area2D" type="Area2D" parent="Tino"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tino/Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_0v2by")
+debug_color = Color(0.829506, 0.517293, 0.874144, 0.42)
+
+[node name="Tulip" parent="." instance=ExtResource("3_yovpp")]
+position = Vector2(-312, 570)
+
+[node name="BoundsDown" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BoundsDown"]
+z_index = 1
+position = Vector2(750, 400)
+texture = ExtResource("4_rr6ie")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoundsDown"]
+polygon = PackedVector2Array(-5, 462, 52, 466, 74, 484, 85, 506, 100, 529, 158, 529, 191, 533, 288, 532, 308, 538, 327, 559, 339, 593, 351, 630, 408, 633, 460, 631, 498, 623, 518, 568, 777, 567, 804, 677, 1349, 713, 1461, 726, 1460, -35, 1503, -35, 1502, 799, 0, 794)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_right = 901.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 1)
+
+[node name="BoundsUp" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BoundsUp"]
+position = Vector2(715.25, 111.25)
+scale = Vector2(0.999651, 0.997758)
+texture = ExtResource("5_5t4tk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoundsUp"]
+polygon = PackedVector2Array(-15, 99, 29, 95, 78, 136, 171, 137, 285, 138, 285, 186, 439, 186, 439, 159, 615, 175, 768, 178, 768, 152, 905, 152, 904, 178, 1057, 178, 1057, 153, 1136, 153, 1189, 203, 1342, 203, 1342, 179, 1472, 179, 1475, -11, -25, -7)
+
+[node name="Arbol" parent="." instance=ExtResource("6_36upl")]
+position = Vector2(559, 192)
+
+[node name="Arbusto2" parent="." instance=ExtResource("7_jgapv")]
+position = Vector2(1427, 201)
+
+[node name="Arbol2" parent="." instance=ExtResource("6_36upl")]
+position = Vector2(1403, 799)
+
+[node name="Arbol3" parent="." instance=ExtResource("6_36upl")]
+position = Vector2(1351, 755)
+
+[node name="Fuente" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Fuente"]
+y_sort_enabled = true
+position = Vector2(958, 382)
+texture = ExtResource("10_a0dyf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fuente"]
+y_sort_enabled = true
+polygon = PackedVector2Array(892, 383, 892, 398, 904, 409, 923, 419, 954, 424, 988, 421, 1012, 411, 1022, 398, 1024, 393, 1024, 383, 1012, 374, 994, 366, 968, 365, 946, 366, 923, 370, 911, 374)
+
+[node name="Fred" type="CharacterBody2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("11_18o55")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fred"]
+y_sort_enabled = true
+position = Vector2(957, 413)
+sprite_frames = SubResource("SpriteFrames_xfrw3")
+animation = &"Down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fred"]
+position = Vector2(957, 433)
+shape = SubResource("CapsuleShape2D_ufyw7")
+
+[node name="Area2D" type="Area2D" parent="Fred"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fred/Area2D"]
+position = Vector2(957, 409)
+shape = SubResource("RectangleShape2D_c6gd6")
+debug_color = Color(0.829506, 0.517293, 0.874144, 0.42)
+
+[node name="ArbolCoconut" type="StaticBody2D" parent="."]
+script = ExtResource("13_onxea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ArbolCoconut"]
+position = Vector2(1340, 483)
+sprite_frames = SubResource("SpriteFrames_v7qn8")
+animation = &"Move"
+frame_progress = 0.625004
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArbolCoconut"]
+polygon = PackedVector2Array(1318, 554, 1324, 556, 1331, 557, 1335, 553, 1343, 557, 1346, 554, 1352, 557, 1355, 551, 1348, 534, 1325, 533)
+
+[node name="Area2D" type="Area2D" parent="ArbolCoconut"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArbolCoconut/Area2D"]
+position = Vector2(1339.5, 496.5)
+shape = SubResource("RectangleShape2D_wvk4y")
+debug_color = Color(0.735748, 0.351814, 0.791805, 0.42)
+
+[node name="mrCoconut" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1339, 447)
+texture = ExtResource("16_gi7hv")
