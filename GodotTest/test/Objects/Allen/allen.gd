@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-@export var allen_gs: SpriteFrames
-@export var allen_c: SpriteFrames
-
 const speed = 90.0
 var last_direction = "Down"
 var can_move = false
@@ -24,7 +21,6 @@ func _ready():
 	if not Notificador.is_inside_tree():
 		$NotificadorLayer.add_child(Notificador)
 	DialogueManager.process_mode = Node.PROCESS_MODE_ALWAYS
-	$AnimatedSprite2D.sprite_frames = allen_gs
 	$AnimatedSprite2D.play("Down")
 	$AnimatedSprite2D.stop()
 	seguimiento_activo = false 
