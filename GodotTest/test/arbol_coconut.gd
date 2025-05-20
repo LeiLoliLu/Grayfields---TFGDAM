@@ -23,6 +23,8 @@ func mover_a_posicion_objetivo(destino: Vector2, duracion: float) -> void:
 func end_intro(_resource):
 	DialogueManager.dialogue_ended.disconnect(end_intro)
 	await move_the_cat()
+	SoundEffectPlayer.stream=load("res://Assets/Items/mrcoconutmeow.mp3")
+	SoundEffectPlayer.play()
 	var hi
 	if Allen.misiones.has("Encontrar al gato de Lauren"):
 		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/pueblo_real.dialogue"), "coco_1")
@@ -41,6 +43,8 @@ func _unpause(_resource):
 	Allen.agregar_al_diario("Lauren")
 	await get_tree().create_timer(1.5).timeout
 	Allen.agregar_mision("Devuélvele el gato a Lauren")
+	await get_tree().create_timer(1.5).timeout
+	Allen.agregar_al_inventario("Mr Coconut")
 	interactedWith = true
 	
 
