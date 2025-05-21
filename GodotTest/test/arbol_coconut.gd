@@ -26,7 +26,8 @@ func end_intro(_resource):
 	SoundEffectPlayer.stream=load("res://Assets/Items/mrcoconutmeow.mp3")
 	SoundEffectPlayer.play()
 	var hi
-	if Allen.misiones.has("Encontrar al gato de Lauren"):
+	if Allen.misiones.has("Encuentra al gato de Lauren"):
+		Allen.misiones.erase("Encuentra al gato de Lauren")
 		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/pueblo_real.dialogue"), "coco_1")
 	else:
 		hi = DialogueManager.show_dialogue_balloon(load("res://Dialogue/pueblo_real.dialogue"), "coco_2")

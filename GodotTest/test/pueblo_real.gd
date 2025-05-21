@@ -4,6 +4,8 @@ extends Node2D
 var menu_open = false
 
 func _ready():
+	$mrCoconut.visible=false
+	$mrCoconut/Area2D/CollisionShape2D.disabled=true
 	$FadeRect.visible=true
 	if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/SteppingStones.mp3"):
 		MasterAudio.stream=load("res://Assets/Audio/SteppingStones.mp3")

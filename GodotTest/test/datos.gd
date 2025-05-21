@@ -58,7 +58,7 @@ var mission_thoughts = {
 	"Encontrar el lazo": "Tiene que estar en alguna parte.",
 	"Dale el lazo a Tulip": "Su legítima dueña.",
 	"Hacer la compra": "Por poco que quiera, para limpiar se necesita jabón.",
-	"Encontrar al gato de Lauren": "Mr Coconut ha salido a dar una vuelta.",
+	"Encuentra al gato de Lauren": "Mr Coconut ha salido a dar una vuelta.",
 	"Devuélvele el gato a Lauren": "Hora de llevarte con tu dueña, chiquitín."
 }
 

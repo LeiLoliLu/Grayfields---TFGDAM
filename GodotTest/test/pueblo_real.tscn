@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dqmkwel844mot"]
+[gd_scene load_steps=58 format=3 uid="uid://dqmkwel844mot"]
 
 [ext_resource type="Script" path="res://pueblo_real.gd" id="1_mya3k"]
 [ext_resource type="Texture2D" uid="uid://chco1ujx83p7q" path="res://Assets/Pueblo/puebloFondo.png" id="2_5m8t2"]
@@ -17,7 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://17ralx3gmmb5" path="res://Assets/Envirorment/arbolCoconutGS.png" id="14_s0mqv"]
 [ext_resource type="Texture2D" uid="uid://brtwygb0j6hra" path="res://Assets/Items/022.png" id="16_gi7hv"]
 [ext_resource type="PackedScene" uid="uid://dmv77ximxitrp" path="res://Objects/Envirorment/arbusto1.tscn" id="17_jquss"]
+[ext_resource type="Script" path="res://mr_coconut.gd" id="17_lkhv0"]
 [ext_resource type="Texture2D" uid="uid://dqp27ce1voflb" path="res://Assets/Pueblo/farola.png" id="18_disgl"]
+[ext_resource type="Texture2D" uid="uid://dnkap55c5jyq1" path="res://Assets/Pueblo/banco.png" id="19_y6obb"]
+[ext_resource type="Script" path="res://puertas.gd" id="20_jm7yf"]
+[ext_resource type="Script" path="res://lauren.gd" id="21_kc8q0"]
+[ext_resource type="Texture2D" uid="uid://5fl4280gcw42" path="res://Assets/Characters/laurenSprite.png" id="22_5a2qk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhdeo"]
 atlas = ExtResource("3_014rq")
@@ -184,9 +189,76 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvk4y"]
 size = Vector2(31, 66)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsv5y"]
+size = Vector2(14, 13)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nfnqq"]
 radius = 5.0
 height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frtde"]
+size = Vector2(70.5, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lstr8"]
+size = Vector2(36, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8xfm"]
+atlas = ExtResource("22_5a2qk")
+region = Rect2(120, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4f2u"]
+atlas = ExtResource("22_5a2qk")
+region = Rect2(30, 0, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yood0"]
+atlas = ExtResource("22_5a2qk")
+region = Rect2(30, 62, 26, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0by7"]
+atlas = ExtResource("22_5a2qk")
+region = Rect2(120, 62, 26, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7bhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8xfm")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4f2u")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yood0")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0by7")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dymi2"]
+size = Vector2(20, 52)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_adldo"]
+radius = 7.0
+height = 22.0
 
 [node name="PuebloReal" type="Node2D"]
 y_sort_enabled = true
@@ -280,13 +352,15 @@ polygon = PackedVector2Array(892, 383, 892, 398, 904, 409, 923, 419, 954, 424, 9
 
 [node name="Fred" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
+position = Vector2(-123, 111)
 script = ExtResource("11_18o55")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fred"]
 y_sort_enabled = true
-position = Vector2(957, 413)
+position = Vector2(957, 438)
 sprite_frames = SubResource("SpriteFrames_xfrw3")
 animation = &"Down"
+offset = Vector2(0, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fred"]
 position = Vector2(957, 433)
@@ -337,6 +411,14 @@ visible = false
 z_index = 1
 position = Vector2(1339, 447)
 texture = ExtResource("16_gi7hv")
+script = ExtResource("17_lkhv0")
+
+[node name="Area2D" type="Area2D" parent="mrCoconut"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mrCoconut/Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_hsv5y")
 
 [node name="Arbusto4" parent="." instance=ExtResource("17_jquss")]
 position = Vector2(518, 179)
@@ -348,17 +430,17 @@ position = Vector2(874, 179)
 position = Vector2(816, 182)
 
 [node name="Arbusto5" parent="." instance=ExtResource("7_jgapv")]
-position = Vector2(1110, 180)
+position = Vector2(1155, 182)
 
 [node name="Arbusto6" parent="." instance=ExtResource("17_jquss")]
-position = Vector2(1158, 162)
+position = Vector2(1113, 182)
 
 [node name="Arbusto7" parent="." instance=ExtResource("7_jgapv")]
 position = Vector2(472, 651)
 
 [node name="Farola2" type="StaticBody2D" parent="."]
 y_sort_enabled = true
-position = Vector2(317, 65)
+position = Vector2(318, 59)
 
 [node name="Sprite2D" type="Sprite2D" parent="Farola2"]
 position = Vector2(782, 225)
@@ -371,7 +453,7 @@ shape = SubResource("CapsuleShape2D_nfnqq")
 
 [node name="Farola" type="StaticBody2D" parent="."]
 y_sort_enabled = true
-position = Vector2(28, 61)
+position = Vector2(30, 58)
 
 [node name="Sprite2D" type="Sprite2D" parent="Farola"]
 position = Vector2(782, 225)
@@ -384,7 +466,7 @@ shape = SubResource("CapsuleShape2D_nfnqq")
 
 [node name="Farola3" type="StaticBody2D" parent="."]
 y_sort_enabled = true
-position = Vector2(317, 315)
+position = Vector2(315, 308)
 
 [node name="Sprite2D" type="Sprite2D" parent="Farola3"]
 position = Vector2(782, 225)
@@ -397,7 +479,7 @@ shape = SubResource("CapsuleShape2D_nfnqq")
 
 [node name="Farola4" type="StaticBody2D" parent="."]
 y_sort_enabled = true
-position = Vector2(28, 311)
+position = Vector2(28, 308)
 
 [node name="Sprite2D" type="Sprite2D" parent="Farola4"]
 position = Vector2(782, 225)
@@ -407,3 +489,102 @@ offset = Vector2(0, -45)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Farola4"]
 position = Vector2(782, 225)
 shape = SubResource("CapsuleShape2D_nfnqq")
+
+[node name="Banco" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Banco"]
+position = Vector2(855, 298)
+texture = ExtResource("19_y6obb")
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banco"]
+position = Vector2(854.75, 291.75)
+shape = SubResource("RectangleShape2D_frtde")
+
+[node name="Banco2" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(202, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Banco2"]
+position = Vector2(855, 298)
+texture = ExtResource("19_y6obb")
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banco2"]
+position = Vector2(854.75, 291.75)
+shape = SubResource("RectangleShape2D_frtde")
+
+[node name="Puertas" type="StaticBody2D" parent="."]
+script = ExtResource("20_jm7yf")
+
+[node name="Area2D" type="Area2D" parent="Puertas"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puertas/Area2D"]
+position = Vector2(362, 161)
+shape = SubResource("RectangleShape2D_lstr8")
+debug_color = Color(0.746175, 0.28524, 0.901778, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Puertas/Area2D"]
+position = Vector2(981, 151)
+shape = SubResource("RectangleShape2D_lstr8")
+debug_color = Color(0.746175, 0.28524, 0.901778, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Puertas/Area2D"]
+position = Vector2(692, 151)
+shape = SubResource("RectangleShape2D_lstr8")
+debug_color = Color(0.746175, 0.28524, 0.901778, 0.42)
+
+[node name="Banco3" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-2, 247)
+
+[node name="Sprite2D" type="Sprite2D" parent="Banco3"]
+position = Vector2(855, 298)
+texture = ExtResource("19_y6obb")
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banco3"]
+position = Vector2(854.75, 291.75)
+shape = SubResource("RectangleShape2D_frtde")
+
+[node name="Banco4" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(200, 247)
+
+[node name="Sprite2D" type="Sprite2D" parent="Banco4"]
+position = Vector2(855, 298)
+texture = ExtResource("19_y6obb")
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banco4"]
+position = Vector2(854.75, 291.75)
+shape = SubResource("RectangleShape2D_frtde")
+
+[node name="Lauren" type="CharacterBody2D" parent="."]
+process_mode = 1
+position = Vector2(1137, 186)
+script = ExtResource("21_kc8q0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lauren"]
+position = Vector2(0, 28)
+sprite_frames = SubResource("SpriteFrames_t7bhw")
+animation = &"Up"
+offset = Vector2(0, -28)
+
+[node name="Area2D" type="Area2D" parent="Lauren"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lauren/Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_dymi2")
+debug_color = Color(0.746175, 0.28524, 0.901778, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lauren"]
+position = Vector2(0, 19)
+shape = SubResource("CapsuleShape2D_adldo")
+
+[node name="Arbusto8" parent="." instance=ExtResource("17_jquss")]
+position = Vector2(1170, 195)

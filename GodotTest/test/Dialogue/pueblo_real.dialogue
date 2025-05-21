@@ -23,7 +23,7 @@ Allen: (Te digo lo mismo.)
 => END!
 
 ~ fred_1
-do show_portrait("")
+do show_portrait("fred1")
 Fred: Buenos días a los dos. ¿Todo bien, Al?
 do show_portrait("allen1")
 Allen: Poco a poco, supongo.
@@ -31,7 +31,7 @@ do show_portrait("allen3")
 Allen: (Fred, mi mejor amigo. O al menos el más cercano. Más listo que la mayoría, y lo sabe. Está obsesionado con hacer acertijos.)
 do show_portrait("tulip6")
 Tulip: ¡Buenos días, Freddie!
-do show_portrait("")
+do show_portrait("fred2")
 Fred: Estoy terminando un acertijo, ¿Te animas a darle un intento?
 do show_portrait("allen3")
 Allen: …Venga.
@@ -40,9 +40,9 @@ Allen: …Venga.
 ~ fred_2
 do show_portrait("allen3")
 Allen: …Nada mal, ¿no?
-do show_portrait("")
+do show_portrait("fred4")
 Fred: Hm… Estás un poco oxidado.
-do show_portrait("")
+do show_portrait("fred3")
 Fred: Me alegra mucho verte fuera, Al.
 do show_portrait("allen3")
 Allen: Gracias, Fred.
@@ -67,4 +67,56 @@ do show_portrait("allen2")
 Allen: ¿Mr Coconut?
 do show_portrait("tulip3")
 Tulip: ¡AH! Se le ha debido de escapar a Lauren. Vamos a llevárselo.
+=> END!
+
+~ puertas
+do show_portrait("allen1")
+Allen: (Preferiría no entrar sin permiso.)
+=> END!
+
+
+~ lauren1
+do show_portrait("")
+Lauren: Anda. Ya decía yo que el pueblo estaba demasiado animado hoy.
+do show_portrait("")
+Lauren: Es salir de casa y todos te montan un festival.
+do show_portrait("allen1")
+Allen: (Lauren, es la mejor amiga de Tulip. Para la energía que tiene mi hermana, Lauren es casi un polo opuesto.)
+do show_portrait("allen10")
+Allen: …Apenas salgo de casa.
+do show_portrait("")
+Lauren: Tampoco es que ellos vayan a verte. Saben donde vives, no hace falta montar ahora todo el paripé.
+do show_portrait("tulip13")
+Tulip: ¡No le animes a quedarse dentro que bastante me ha costado sacarle!
+do show_portrait("")
+Lauren: Tranquila, si se vuelve dentro me aseguraré de sacarlo de vuelta.
+do show_portrait("tulip10")
+Tulip: ¡Más te vale!
+=> END!
+
+~ lauren2
+do show_portrait("allen2")
+Allen: ¿Has perdido algo?
+do show_portrait("")
+Lauren: Ah, no, realmente no. Mr Coconut se ha escapado, estoy buscándole.
+do show_portrait("tulip7")
+Tulip: ¿¿Coco se ha escapado?? ¡Hay que encontrarle!
+do show_portrait("allen10")
+Allen: (¿Todo tiene que pasar el día que salgo de casa?)
+
+=> END!
+
+~ lauren3
+do show_portrait("tulip1")
+Tulip: ¡Adivina quién se ha lanzado a los brazos de Allen!
+do show_portrait("")
+Lauren: Coco, Allen no es un rascador. ¿Por dónde demonios te escapas siempre?
+do show_portrait("")
+Lauren: Gracias, chicos.
+do show_portrait("allen1")
+Allen: Hm.
+=> END!
+
+~ cocogiven
+Lauren: [[Bolita de pelo. | Chisme. | Bichejo.]]
 => END!
