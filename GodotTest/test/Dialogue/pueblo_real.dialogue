@@ -1,22 +1,22 @@
 ~ tino_start
-do show_portrait("")
+do show_portrait("tino1")
 Tino: ¡El ermitaño en carne y hueso! ¿No terminas de perderte de una vez, o que?
 do show_portrait("allen4")
 Allen: (Tino. Deportista. Molesto. Siempre dispuesto a hacerme la vida un infierno.)
 do show_portrait("allen4")
 Allen: ...No.
-do show_portrait("")
+do show_portrait("tino2")
 Tino: Pues a ver si te da por ahí la próxima vez.
 do show_portrait("tulip2")
 Tulip: Tino, déjale en paz.
-do show_portrait("")
+do show_portrait("tino4")
 Tino: ¿Aún tienes que estar detrás de tu hermanita para defenderte, palillo?
 do show_portrait("tulip8")
 Tulip: No le hagas caso, Allen, te está tomando el pelo.
 => END!
 
 ~ tino_2
-do show_portrait("")
+do show_portrait("tino3")
 Tino: Piérdete, memo.
 do show_portrait("allen4")
 Allen: (Te digo lo mismo.)
@@ -76,19 +76,19 @@ Allen: (Preferiría no entrar sin permiso.)
 
 
 ~ lauren1
-do show_portrait("")
+do show_portrait("lauren1")
 Lauren: Anda. Ya decía yo que el pueblo estaba demasiado animado hoy.
-do show_portrait("")
+do show_portrait("lauren4")
 Lauren: Es salir de casa y todos te montan un festival.
 do show_portrait("allen1")
 Allen: (Lauren, es la mejor amiga de Tulip. Para la energía que tiene mi hermana, Lauren es casi un polo opuesto.)
 do show_portrait("allen10")
 Allen: …Apenas salgo de casa.
-do show_portrait("")
+do show_portrait("lauren2")
 Lauren: Tampoco es que ellos vayan a verte. Saben donde vives, no hace falta montar ahora todo el paripé.
 do show_portrait("tulip13")
 Tulip: ¡No le animes a quedarse dentro que bastante me ha costado sacarle!
-do show_portrait("")
+do show_portrait("lauren3")
 Lauren: Tranquila, si se vuelve dentro me aseguraré de sacarlo de vuelta.
 do show_portrait("tulip10")
 Tulip: ¡Más te vale!
@@ -97,7 +97,7 @@ Tulip: ¡Más te vale!
 ~ lauren2
 do show_portrait("allen2")
 Allen: ¿Has perdido algo?
-do show_portrait("")
+do show_portrait("lauren1")
 Lauren: Ah, no, realmente no. Mr Coconut se ha escapado, estoy buscándole.
 do show_portrait("tulip7")
 Tulip: ¿¿Coco se ha escapado?? ¡Hay que encontrarle!
@@ -109,14 +109,15 @@ Allen: (¿Todo tiene que pasar el día que salgo de casa?)
 ~ lauren3
 do show_portrait("tulip1")
 Tulip: ¡Adivina quién se ha lanzado a los brazos de Allen!
-do show_portrait("")
+do show_portrait("lauren5")
 Lauren: Coco, Allen no es un rascador. ¿Por dónde demonios te escapas siempre?
-do show_portrait("")
+do show_portrait("lauren4")
 Lauren: Gracias, chicos.
 do show_portrait("allen1")
 Allen: Hm.
 => END!
 
 ~ cocogiven
+do show_portrait("lauren5")
 Lauren: [[Bolita de pelo. | Chisme. | Bichejo.]]
 => END!

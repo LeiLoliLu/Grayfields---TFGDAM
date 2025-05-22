@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d3swqof7se2hi"
+valid=false
+
+[deps]
+
+source_file="res://tienda.dialogue"
+
+[params]
+
+defaults=true
