@@ -14,6 +14,8 @@ var path_history: Array[Vector2] = []
 const history_spacing = 5.0
 const max_history_length = 200
 
+var shopping_cart : Array = []
+
 var seguimiento_activo := false
 @onready var AllenRay: RayCast2D = $RayCast2D
 
@@ -86,6 +88,10 @@ func _process(_delta):
 				path_history.push_front(global_position)
 				if path_history.size() > max_history_length:
 					path_history.pop_back()
+
+func put_in_cart(obj:String):
+	shopping_cart.append(obj)
+	print(shopping_cart)
 
 func agregar_mision(nombre: String):
 	if not misiones.has(nombre):

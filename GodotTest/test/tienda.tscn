@@ -1,28 +1,72 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8717kyppq61k"]
+[gd_scene load_steps=32 format=3 uid="uid://b8717kyppq61k"]
 
+[ext_resource type="Script" path="res://tienda.gd" id="1_ntsw7"]
 [ext_resource type="Texture2D" uid="uid://bvsawas0x5bn7" path="res://Assets/Tienda/fondoTienda.png" id="1_wo78o"]
+[ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="2_0is45"]
 [ext_resource type="Texture2D" uid="uid://bi3gemhfto8gy" path="res://Assets/Tienda/fondoOverlayTienda.png" id="2_5fmbx"]
 [ext_resource type="Texture2D" uid="uid://b4wh8cbthdnvr" path="res://Assets/Tienda/ericCounter.png" id="3_b210i"]
 [ext_resource type="Texture2D" uid="uid://ng3judrfy75l" path="res://Assets/Tienda/mesas.png" id="4_f2ht4"]
 [ext_resource type="Texture2D" uid="uid://cqraf4jpv16si" path="res://Assets/Tienda/createsbefore.png" id="5_axh2x"]
+[ext_resource type="Script" path="res://counter.gd" id="5_efqg4"]
+[ext_resource type="Script" path="res://latas.gd" id="6_jx5wg"]
 [ext_resource type="Texture2D" uid="uid://bh2smdvyhcsjs" path="res://Assets/Tienda/fridges.png" id="6_y66p5"]
+[ext_resource type="Script" path="res://door.gd" id="7_l1did"]
+[ext_resource type="Script" path="res://tables.gd" id="7_sdmkh"]
+[ext_resource type="Script" path="res://crates_2.gd" id="11_6yrlb"]
+[ext_resource type="Script" path="res://tables_2.gd" id="13_2m14e"]
+[ext_resource type="Script" path="res://fridges.gd" id="13_6k28r"]
+[ext_resource type="Script" path="res://fridges_2.gd" id="15_qvl7w"]
+[ext_resource type="Script" path="res://fridges_3.gd" id="16_xlt1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h46y4"]
 size = Vector2(98, 31)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_se4iq"]
-size = Vector2(172, 45)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjtmp"]
-size = Vector2(133, 43)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oinxb"]
-size = Vector2(214, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65x76"]
+size = Vector2(94, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tofke"]
 size = Vector2(81, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1qqx"]
+size = Vector2(81, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjtmp"]
+size = Vector2(133, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjguc"]
+size = Vector2(66, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02gou"]
+size = Vector2(64, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kktxk"]
+size = Vector2(76, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se4iq"]
+size = Vector2(172, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w67di"]
+size = Vector2(79, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oinxb"]
+size = Vector2(214, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kpsv"]
+size = Vector2(52, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dyar"]
+size = Vector2(51, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvtks"]
+size = Vector2(51, 48)
+
 [node name="Tienda" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(288, 162)
+script = ExtResource("1_ntsw7")
+
+[node name="Tulip" parent="." instance=ExtResource("2_0is45")]
+position = Vector2(-14, 161)
 
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -1
@@ -40,50 +84,151 @@ texture = ExtResource("2_5fmbx")
 polygon = PackedVector2Array(-27, 163, -27, 137, -188, 137, -188, -58, 189, -58, 189, 138, 28, 138, 28, 163, 208, 163, 208, -82, -210, -82, -210, 163)
 
 [node name="Counter" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("5_efqg4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Counter"]
-position = Vector2(-99.75, -53)
+position = Vector2(-101, -17)
 scale = Vector2(1.00505, 1)
 texture = ExtResource("3_b210i")
+offset = Vector2(1.24371, -36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Counter"]
 position = Vector2(-100, -42.5)
 shape = SubResource("RectangleShape2D_h46y4")
 
-[node name="Tables" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Counter"]
+collision_layer = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Tables"]
-position = Vector2(104.5, 40)
-scale = Vector2(1, 1)
-texture = ExtResource("4_f2ht4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Counter/Area2D"]
+position = Vector2(-102, -57)
+shape = SubResource("RectangleShape2D_65x76")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables"]
-position = Vector2(106, 41.5)
-shape = SubResource("RectangleShape2D_se4iq")
+[node name="Door" type="StaticBody2D" parent="."]
+script = ExtResource("7_l1did")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0.5, 172)
+shape = SubResource("RectangleShape2D_tofke")
+
+[node name="Area2D" type="Area2D" parent="Door"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(0.5, 173)
+shape = SubResource("RectangleShape2D_q1qqx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 
 [node name="Crates" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("6_jx5wg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crates"]
-position = Vector2(-122.5, 47.75)
+position = Vector2(-122, 86)
 scale = Vector2(1, 1.00633)
 texture = ExtResource("5_axh2x")
+offset = Vector2(-0.5, -38.0094)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crates"]
 position = Vector2(-122.5, 54.5)
 shape = SubResource("RectangleShape2D_cjtmp")
 
+[node name="Area2D" type="Area2D" parent="Crates"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Area2D"]
+position = Vector2(-156, 60)
+shape = SubResource("RectangleShape2D_hjguc")
+
+[node name="Crates2" type="StaticBody2D" parent="."]
+script = ExtResource("11_6yrlb")
+
+[node name="Area2D" type="Area2D" parent="Crates2"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates2/Area2D"]
+position = Vector2(-89, 58)
+shape = SubResource("RectangleShape2D_02gou")
+
+[node name="Tables2" type="StaticBody2D" parent="."]
+script = ExtResource("13_2m14e")
+
+[node name="Area2D" type="Area2D" parent="Tables2"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables2/Area2D"]
+position = Vector2(148, 35)
+shape = SubResource("RectangleShape2D_kktxk")
+
+[node name="Tables" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("7_sdmkh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tables"]
+position = Vector2(105, 76)
+texture = ExtResource("4_f2ht4")
+offset = Vector2(-0.5, -36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables"]
+position = Vector2(106, 41.5)
+shape = SubResource("RectangleShape2D_se4iq")
+
+[node name="Area2D" type="Area2D" parent="Tables"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/Area2D"]
+position = Vector2(62.5, 35)
+shape = SubResource("RectangleShape2D_w67di")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 89.0
+offset_bottom = 325.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Tu cesta:"
+horizontal_alignment = 1
+
 [node name="Fridges" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("13_6k28r")
 
 [node name="Sprite2D" type="Sprite2D" parent="Fridges"]
-position = Vector2(90.5, -68.5)
+position = Vector2(97, -29)
 texture = ExtResource("6_y66p5")
+offset = Vector2(-6.5, -39.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fridges"]
 position = Vector2(98, -51)
 shape = SubResource("RectangleShape2D_oinxb")
 
-[node name="Door" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Fridges"]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(0.5, 172)
-shape = SubResource("RectangleShape2D_tofke")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridges/Area2D"]
+position = Vector2(24, -69)
+shape = SubResource("RectangleShape2D_7kpsv")
+
+[node name="Fridges2" type="StaticBody2D" parent="."]
+script = ExtResource("15_qvl7w")
+
+[node name="Area2D" type="Area2D" parent="Fridges2"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridges2/Area2D"]
+position = Vector2(90.5, -69)
+shape = SubResource("RectangleShape2D_0dyar")
+
+[node name="Fridges3" type="StaticBody2D" parent="."]
+script = ExtResource("16_xlt1t")
+
+[node name="Area2D" type="Area2D" parent="Fridges3"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridges3/Area2D"]
+position = Vector2(156.5, -69)
+shape = SubResource("RectangleShape2D_tvtks")

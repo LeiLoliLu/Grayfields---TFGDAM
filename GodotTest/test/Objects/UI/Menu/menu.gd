@@ -35,7 +35,6 @@ func actualizar_inventario(player):
 			child.queue_free()
 			
 	for item in player.inventario:
-		print(item)
 		var index = Datos.objetos.find(item)
 		if index == -1:
 			continue

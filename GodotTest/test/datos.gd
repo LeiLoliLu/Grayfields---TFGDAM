@@ -29,7 +29,7 @@ var diario_contenido = {
 
 var objetos = [
 	"Sopa de champiñones",
-	"Albondigas en salsa",
+	"Albóndigas en salsa",
 	"Chili picante",
 	"Caja de galletas normales",
 	"Caja de galletas rellenas",
@@ -64,7 +64,7 @@ var mission_thoughts = {
 
 var item_thoughts = {
 	"Sopa de champiñones": "No me fio demasiado de como pueda estar esto...",
-	"Albondigas en salsa": "¿Será carne de verdad?",
+	"Albóndigas en salsa": "¿Será carne de verdad?",
 	"Chili picante": "Un billete directo a villa cuarto de baño.",
 	"Caja de galletas normales": "Crujientes. Simples. Perfectas.",
 	"Caja de galletas rellenas": "De algo tendré que morirme.",
