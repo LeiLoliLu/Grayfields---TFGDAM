@@ -51,12 +51,12 @@ func add_allen_to_scene():
 	add_child(Allen)
 	
 func goNextArea():
-	Allen.comesFrom ="Area1Bosque"
+	Allen.comesFrom ="PuebloReal"
 	var current_scene = get_tree().current_scene
 	Allen.owner = null
 	get_tree().root.add_child(Allen)
 	
-	var next = load("res://bosque_2.tscn")
+	var next = load("res://tienda.tscn")
 	var new_scene = next.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene = new_scene

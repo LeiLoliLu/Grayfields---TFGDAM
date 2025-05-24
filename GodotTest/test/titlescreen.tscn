@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkemq8omflnr"]
+
+[ext_resource type="Texture2D" uid="uid://devcf5m4m85v5" path="res://Assets/UI_ASSETS/menuTitle1.png" id="1_a6sdq"]
+[ext_resource type="Script" path="res://titlescreen.gd" id="1_cbkmd"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_cbkmd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+offset_right = 576.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 1)
+
+[node name="MenuTitle1" type="Sprite2D" parent="."]
+position = Vector2(288, 162)
+texture = ExtResource("1_a6sdq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(1.5, 1.5)
+
+[node name="ListaBotones" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = 177.0
+offset_right = 356.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Guardar" type="Button" parent="ListaBotones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Empezar Partida"
+
+[node name="Cargar" type="Button" parent="ListaBotones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Cargar Partida"
+
+[node name="Salir" type="Button" parent="ListaBotones"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Salir"
+
+[connection signal="pressed" from="ListaBotones/Guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="ListaBotones/Cargar" to="." method="_on_cargar_pressed"]
+[connection signal="pressed" from="ListaBotones/Salir" to="." method="_on_salir_pressed"]

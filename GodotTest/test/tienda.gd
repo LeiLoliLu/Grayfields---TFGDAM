@@ -8,6 +8,7 @@ var only_soap = false
 var menu_open = false
 var has_bought = false
 
+
 func _ready():
 	if !MasterAudio.is_playing() or MasterAudio.stream!=load("res://Assets/Audio/Shopping.mp3"):
 		MasterAudio.stream=load("res://Assets/Audio/Shopping.mp3")
@@ -74,14 +75,16 @@ func fin_compra():
 	for child in $CanvasLayer/VBoxContainer.get_children():
 		child.free()
 	Allen.misiones.erase("Hacer la compra")
+	has_bought=true
 	
 func goNextArea():
+	SoundEffectPlayer.stream=load("res://Assets/Audio/OpenDoor.mp3")
+	SoundEffectPlayer.play()
 	Allen.comesFrom ="Shop"
 	var current_scene = get_tree().current_scene
 	Allen.owner = null
 	get_tree().root.add_child(Allen)
-	
-	var next = load("res://redcrack.tscn")
+	var next = load("res://red_village.tscn")
 	var new_scene = next.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene = new_scene

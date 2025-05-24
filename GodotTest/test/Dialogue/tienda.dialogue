@@ -384,3 +384,29 @@ do fin_compra()
 do show_portrait("allen1")
 Allen: (No, hay que comprar...)
 => END!
+
+~ something_happened
+do show_portrait("tulip6")
+Tulip: Bueno, ya podemos volver a casa.
+do show_portrait("allen10")
+Allen: Bastante he hecho ya hoy, y mira que no pensaba ser productivo.
+do show_portrait("tulip1")
+Tulip: Me alegra que hayas salido hoy, hermanito.
+do show_portrait("tulip6")
+Tulip: Todo el mundo se alegra de verte, y, me gusta pasar tiempo contigo.
+do show_portrait("allen1")
+Allen: …
+do show_portrait("allen3")
+Allen: …Intentaré salir más, ¿Vale?
+do show_portrait("allen8")
+Allen: Pero solo si me arrastras fuera de la casa.
+do show_portrait("tulip6")
+Tulip: Jajaja, dicho y hecho.
+=> END!
+
+~ something_happened2
+do show_portrait("tulip4")
+Tulip: ¿Q-qué? ¿Qué ha sido eso?
+do show_portrait("allen2")
+Allen: (...Viene de la plaza de la fuente.)
+=> END!
