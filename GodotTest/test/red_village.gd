@@ -105,9 +105,9 @@ func _ready():
 	flash.tween_property($FadeRect, "modulate:a", 1.0, 2.5)
 	await flash.finished
 
-	var white = create_tween()
-	white.tween_property($FadeRect, "color", Color(0, 0, 0, 0), 2.5)
-	await white.finished
+	var black = create_tween()
+	black.tween_property($FadeRect, "color", Color(0, 0, 0), 2.5)
+	await black.finished
 	
 	var new_scene = load("res://titlescreen.tscn").instantiate()
 	new_scene.usar_sprite_alternativo = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dqmkwel844mot"]
+[gd_scene load_steps=61 format=3 uid="uid://dqmkwel844mot"]
 
 [ext_resource type="Script" path="res://pueblo_real.gd" id="1_mya3k"]
 [ext_resource type="Texture2D" uid="uid://chco1ujx83p7q" path="res://Assets/Pueblo/puebloFondo.png" id="2_5m8t2"]
@@ -92,6 +92,9 @@ height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v2by"]
 size = Vector2(26, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovp37"]
+size = Vector2(21, 813)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2nbm"]
 atlas = ExtResource("11_0w0pe")
@@ -310,6 +313,10 @@ texture = ExtResource("4_rr6ie")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoundsDown"]
 polygon = PackedVector2Array(-5, 462, 52, 466, 74, 484, 85, 506, 100, 529, 158, 529, 191, 533, 288, 532, 308, 538, 327, 559, 339, 593, 351, 630, 408, 633, 460, 631, 498, 623, 518, 568, 777, 567, 804, 677, 1349, 713, 1461, 726, 1460, -35, 1503, -35, 1502, 799, 0, 794)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundsDown"]
+position = Vector2(-10.5, 396.5)
+shape = SubResource("RectangleShape2D_ovp37")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

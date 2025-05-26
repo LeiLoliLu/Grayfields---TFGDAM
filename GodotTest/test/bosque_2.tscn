@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d18ywu7d3ten7"]
+[gd_scene load_steps=17 format=3 uid="uid://d18ywu7d3ten7"]
 
 [ext_resource type="Script" path="res://bosque_2.gd" id="1_rgy47"]
 [ext_resource type="Texture2D" uid="uid://dcv41fbau4fqx" path="res://Assets/Envirorment/Area2Fondo.png" id="2_hl387"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bjs2pyfboyv1u" path="res://Objects/Tulip/tulip.tscn" id="10_g3wkh"]
 [ext_resource type="Script" path="res://Objects/Tulip/tulipArea2.gd" id="11_6e2ts"]
 [ext_resource type="Script" path="res://bosque2area.gd" id="12_n0opj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le7u3"]
+size = Vector2(31.5, 274.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r57a8"]
 size = Vector2(180, 2)
@@ -76,6 +79,10 @@ texture = ExtResource("6_v6aco")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees4"]
 polygon = PackedVector2Array(964, 196, 917, 196, 872, 184, 829, 199, 783, 201, 731, 152, 685, 149, 628, 105, 526, 100, 508, 87, 508, -15, 964, -15)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees4"]
+position = Vector2(-15.75, 270.625)
+shape = SubResource("RectangleShape2D_le7u3")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 y_sort_enabled = true
 
@@ -117,7 +124,7 @@ polygon = PackedVector2Array(373, 308, 368, 381, 365, 467, 371, 558, 502, 562, 5
 polygon = PackedVector2Array(379, -19, 378, 82, 383, 192, 382, 208, 511, 210, 508, 77, 508, -12)
 
 [node name="Tulip" parent="." instance=ExtResource("10_g3wkh")]
-position = Vector2(-15, 308)
+position = Vector2(15, 303)
 script = ExtResource("11_6e2ts")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]

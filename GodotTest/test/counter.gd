@@ -19,6 +19,7 @@ func showInteraction(player):
 func _unpause(_resource):
 	get_tree().paused = false
 	DialogueManager.dialogue_ended.disconnect(_unpause)
+	Allen.agregar_al_diario("Eric")
 	
 
 	

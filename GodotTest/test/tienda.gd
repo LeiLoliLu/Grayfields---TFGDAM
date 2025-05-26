@@ -63,7 +63,15 @@ func _process(_delta):
 		menu.actualizar_inventario(Allen)
 		menu.actualizar_diario(Allen)
 		get_tree().paused = menu_open
-		
+	if has_bought:
+		$Counter/Area2D/CollisionShape2D.disabled=true
+		$Crates/Area2D/CollisionShape2D.disabled=true
+		$Crates2/Area2D/CollisionShape2D.disabled=true
+		$Tables2/Area2D/CollisionShape2D.disabled=true
+		$Tables/Area2D/CollisionShape2D.disabled=true
+		$Fridges/Area2D/CollisionShape2D.disabled=true
+		$Fridges2/Area2D/CollisionShape2D.disabled=true
+		$Fridges3/Area2D/CollisionShape2D.disabled=true
 func add_allen_to_scene():
 	add_child(Allen)
 
